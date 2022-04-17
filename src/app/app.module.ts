@@ -14,10 +14,10 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroInfoComponent } from './hero-info/hero-info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeroBuilderComponent } from './hero-builder/hero-builder.component';
-import { CharacterSheetComponent } from './character-sheet/character-sheet.component';
+import { HeroInfoPanelComponent } from './hero-info-panel/hero-info-panel.component';
+import { HeroSurvivalPanelComponent } from './hero-survival-panel/hero-survival-panel.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +26,9 @@ import { CharacterSheetComponent } from './character-sheet/character-sheet.compo
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroInfoComponent,
     HeroBuilderComponent,
-    CharacterSheetComponent
+    HeroInfoPanelComponent,
+    HeroSurvivalPanelComponent,
   ],
   imports: [
     BrowserModule,

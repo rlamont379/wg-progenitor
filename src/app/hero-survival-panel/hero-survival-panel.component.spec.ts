@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroInfoComponent } from './hero-info.component';
+import { HeroSurvivalPanelComponent } from './hero-survival-panel.component';
 
-describe('HeroInfoComponent', () => {
-  let component: HeroInfoComponent;
-  let fixture: ComponentFixture<HeroInfoComponent>;
+describe('HeroSurvivalPanelComponent', () => {
+  let component: HeroSurvivalPanelComponent;
+  let fixture: ComponentFixture<HeroSurvivalPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeroInfoComponent ]
+      declarations: [ HeroSurvivalPanelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroInfoComponent);
+    fixture = TestBed.createComponent(HeroSurvivalPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CharacterSheetComponent } from './character-sheet.component';
+import { HeroInfoPanelComponent } from './hero-info-panel.component';
 
-describe('CharacterSheetComponent', () => {
-  let component: CharacterSheetComponent;
-  let fixture: ComponentFixture<CharacterSheetComponent>;
+describe('HeroInfoPanelComponent', () => {
+  let component: HeroInfoPanelComponent;
+  let fixture: ComponentFixture<HeroInfoPanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharacterSheetComponent ]
+      declarations: [ HeroInfoPanelComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CharacterSheetComponent);
+    fixture = TestBed.createComponent(HeroInfoPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

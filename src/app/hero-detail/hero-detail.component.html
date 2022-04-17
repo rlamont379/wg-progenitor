@@ -3,9 +3,12 @@
   <h2>{{hero.name | uppercase}} Details</h2>
   <div><span>id: </span>{{hero.id}}</div>
   <div class="character-sheet-container">
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <app-hero-info-panel></app-hero-info-panel>
+    <app-hero-survival-panel></app-hero-survival-panel>
   </div>
+
+  <label for="hero-name">Hero name: </label>
+  <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
   <button mat-raised-button color="primary" type="button" (click)="save()">save</button>
 
 </div>
