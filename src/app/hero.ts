@@ -54,6 +54,7 @@ export interface Hero {
   skillCunning?: number;
   skillDeception?: number;
   skillInsight?: number;
+  skillIntimidation?: number;
   skillInvestigation?: number;
   skillLeadership?: number;
   skillMedicae?: number;

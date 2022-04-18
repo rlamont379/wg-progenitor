@@ -1,0 +1,16 @@
+.character-name {
+  font-weight: bold;
+}
+
+.character-archetype-species {
+  font-size: 14px;
+}
+
+.character-tier-rank-xp {
+  font-size: 14px;
+}
+
+.character-keywords {
+  font-size: 14px;
+  color: gray;
+}

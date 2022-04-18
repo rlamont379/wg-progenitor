@@ -1,0 +1,25 @@
+.stat-table-container {
+  box-shadow: 0 5px 5px -3px #0003,0 8px 10px 1px #00000024,0 3px 14px 2px #0000001f;
+  margin-bottom: 20px;
+}
+
+.stat-table-title {
+  margin-bottom: 0px;
+  text-align: center;
+  background-color: #3F51B5;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.mat-column-rating {
+  justify-content: center;
+}
+
+.mat-column-bonus {
+  justify-content: center;
+}
+
+.mat-column-total {
+  justify-content: center;
+}

@@ -1,0 +1,19 @@
+.character-survival {
+  background-color: #1f1f1f;
+}
+
+.character-survival-table {
+  border: 1px solid gray;
+}
+
+.character-survival-table th {
+  font-size: 12px;
+  width: 50%;
+  color: gray;
+  border: 1px solid gray;
+}
+
+.character-survival-table td {
+  text-align: center;
+  border: 1px solid gray;
+}

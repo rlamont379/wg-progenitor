@@ -1,10 +1,22 @@
 <div *ngIf="hero">
-
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{hero.id}}</div>
   <div class="character-sheet-container">
-    <app-hero-info-panel></app-hero-info-panel>
-    <app-hero-survival-panel></app-hero-survival-panel>
+    <div class="row">
+      <div class="col-4">
+        <app-hero-info-panel></app-hero-info-panel>
+      </div>
+      <div class="col-4">
+        <app-hero-survival-panel></app-hero-survival-panel>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3" style="display: table">
+        <app-hero-attributes-panel></app-hero-attributes-panel>
+        <app-hero-traits-panel></app-hero-traits-panel>
+      </div>
+      <div class="col-3" style="display: table">
+        <app-hero-skills-panel></app-hero-skills-panel>
+      </div>
+    </div>
   </div>
 
   <label for="hero-name">Hero name: </label>
