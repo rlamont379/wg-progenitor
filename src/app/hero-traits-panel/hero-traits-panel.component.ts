@@ -12,7 +12,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 })
 export class HeroTraitsPanelComponent implements OnInit {
   @Input() hero?: Hero;
-  displayedColumns = ['name', 'rating'];
+  displayedColumns = ['name', 'rating', 'modifier'];
   TRAIT_DATA: Trait[] = [];
   traitSource: any;
 
@@ -27,6 +27,26 @@ export class HeroTraitsPanelComponent implements OnInit {
 
   ngDoCheck(): void {
     this.TRAIT_DATA = [
+      {
+        name: "Max Wounds",
+        rating: this.hero?.traitMaxWounds as number,
+      },
+      {
+        name: "Max Shock",
+        rating: this.hero?.traitMaxShock as number,
+      },
+      {
+        name: "Defence",
+        rating: this.hero?.traitDefence as number,
+      },
+      {
+        name: "Resilience",
+        rating: this.hero?.traitResilience as number,
+      },
+      {
+        name: "Determination",
+        rating: this.hero?.traitDetermination as number,
+      },
       { name: "Speed",
         rating: this.hero?.traitSpeed as number,
       },

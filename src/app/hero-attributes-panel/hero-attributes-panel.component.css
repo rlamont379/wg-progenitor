@@ -13,13 +13,16 @@
 }
 
 .mat-column-rating {
+  max-width: 15%;
   justify-content: center;
 }
 
 .mat-column-bonus {
+  max-width: 15%;
   justify-content: center;
 }
 
 .mat-column-total {
+  max-width: 15%;
   justify-content: center;
 }

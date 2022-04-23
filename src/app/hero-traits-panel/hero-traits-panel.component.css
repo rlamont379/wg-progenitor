@@ -12,5 +12,11 @@
 }
 
 .mat-column-rating {
+  max-width: 20%;
+  justify-content: right;
+}
+
+.mat-column-modifier {
+  max-width: 10%;
   justify-content: right;
 }

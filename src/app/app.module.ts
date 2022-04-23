@@ -6,8 +6,12 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatGridListModule } from '@angular/material/grid-list'
-import { MatTableModule } from '@angular/material/table'
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -22,6 +26,11 @@ import { HeroSurvivalPanelComponent } from './hero-survival-panel/hero-survival-
 import { HeroAttributesPanelComponent } from './hero-attributes-panel/hero-attributes-panel.component';
 import { HeroTraitsPanelComponent } from './hero-traits-panel/hero-traits-panel.component';
 import { HeroSkillsPanelComponent } from './hero-skills-panel/hero-skills-panel.component';
+import { HeroBuilderInfoComponent } from './hero-builder-info/hero-builder-info.component';
+import { HeroBuilderNavbarComponent } from './hero-builder-navbar/hero-builder-navbar.component';
+import { HeroBuilderSpeciesComponent } from './hero-builder-species/hero-builder-species.component';
+import { HeroBuilderArchetypeComponent } from './hero-builder-archetype/hero-builder-archetype.component';
+import { HeroBuilderStatsComponent } from './hero-builder-stats/hero-builder-stats.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +45,11 @@ import { HeroSkillsPanelComponent } from './hero-skills-panel/hero-skills-panel.
     HeroAttributesPanelComponent,
     HeroTraitsPanelComponent,
     HeroSkillsPanelComponent,
+    HeroBuilderInfoComponent,
+    HeroBuilderNavbarComponent,
+    HeroBuilderSpeciesComponent,
+    HeroBuilderArchetypeComponent,
+    HeroBuilderStatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +63,11 @@ import { HeroSkillsPanelComponent } from './hero-skills-panel/hero-skills-panel.
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    MatCardModule,
+    MatSelectModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

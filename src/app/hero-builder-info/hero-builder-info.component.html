@@ -1,0 +1,37 @@
+<mat-card style="width: 750px">
+  <mat-card-title>Info</mat-card-title>
+  <mat-card-subtitle>One amongst untold billions...</mat-card-subtitle>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Character Name</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Tier</mat-label>
+      <mat-select [(value)]="selectedTier">
+        <mat-option value="1">Tier 1</mat-option>
+        <mat-option value="2">Tier 2</mat-option>
+        <mat-option value="3">Tier 3</mat-option>
+        <mat-option value="4">Tier 4</mat-option>
+        <mat-option value="5">Tier 5</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-icon style="color:grey">info_outline</mat-icon>
+  </div>
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Rank</mat-label>
+      <input matInput type="number" placeholder="Rank" value="1">
+    </mat-form-field>
+    <mat-icon style="color:grey">info_outline</mat-icon>
+  </div>
+  <div class="row">
+    <mat-form-field hintLabel="XP earned by playing the game." appearance="outline">
+      <mat-label>Earned Experience Points (XP)</mat-label>
+      <input matInput type="number" placeholder="XP" value="0">
+    </mat-form-field>
+    <mat-icon style="color:grey">info_outline</mat-icon>
+  </div>
+</mat-card>

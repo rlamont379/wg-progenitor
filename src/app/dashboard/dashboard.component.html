@@ -1,9 +1,9 @@
 <h2>User's Characters</h2>
 <div class="heroes-menu">
-  <a mat-raised-button color="primary" *ngFor="let hero of heroes" routerLink="/characters/{{hero.id}}/sheet">
+  <a mat-raised-button color="primary" *ngFor="let hero of heroes" routerLink="/characters/{{hero.id}}/builder/info">
     {{hero.name}}
   </a>
-  <a mat-raised-button color="primary" (click)="createHero()" routerLink="/characters/builder">
+  <a mat-raised-button color="primary" (click)="createHero()">
     <mat-icon>person_add</mat-icon>
   </a>
 </div>

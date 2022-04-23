@@ -14,11 +14,11 @@
 
 
 .mat-skill-header {
-  justify-content: center;
+  padding-left: 40px;
+  justify-content: left;
 }
 
 .mat-column-attribute {
-  min-width: 35%;
   justify-content: center;
 }
 
