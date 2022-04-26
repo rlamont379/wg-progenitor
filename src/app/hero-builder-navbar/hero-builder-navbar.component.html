@@ -1,8 +1,24 @@
 
-<div class="row">
-  200 / 200 XP
-  <a mat-raised-button color="primary" *ngIf="hero" routerLink="/characters/{{hero.id}}/builder/info">Info</a>
-  <a mat-raised-button color="primary" *ngIf="hero" routerLink="/characters/{{hero.id}}/builder/species">Species</a>
-  <a mat-raised-button color="primary" *ngIf="hero" routerLink="/characters/{{hero.id}}/builder/archetype">Archetype</a>
-  <a mat-raised-button color="primary" *ngIf="hero" routerLink="/characters/{{hero.id}}/builder/stats">Stats</a>
+<div *ngIf="hero" class="row">
+  <div>
+    {{hero.speciesXp + hero.archetypeXp + hero.statXp}}/{{hero.totalXp}} XP
+  </div>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/info" routerLinkActive="activebutton">
+    <mat-icon>description</mat-icon> Info
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/species" routerLinkActive="activebutton">
+    <mat-icon>accessibility</mat-icon>Species
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/faction" routerLinkActive="activebutton">
+    <mat-icon>groups</mat-icon> Faction
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/archetype" routerLinkActive="activebutton">
+    <mat-icon>military_tech</mat-icon> Archetype
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/stats" routerLinkActive="activebutton">
+    <mat-icon>bar_chart</mat-icon> Stats
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/sheet" routerLinkActive="activebutton">
+    <mat-icon>web</mat-icon> Character Sheet
+  </a>
 </div>

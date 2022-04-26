@@ -2,6 +2,44 @@
   <mat-card-title>Species</mat-card-title>
   <mat-card-subtitle>Aliens, heretics, mutants - and worse.</mat-card-subtitle>
   <mat-accordion class="character-species-options">
+    <mat-expansion-panel *ngFor="let species of species">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="character-species-name">
+          {{species.name}}
+        </mat-panel-title>
+        <mat-panel-description class="character-species-cost">
+          Cost: {{species.cost}} XP
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="character-species-description" style="font-style: italic">
+        {{species.description}}
+      </p>
+      <p><strong>Speed</strong> - {{species.speed}}</p>
+      <div *ngIf="species.bonuses">
+        <hr>
+        <h3>Bonuses</h3>
+        <strong>Attributes</strong> -
+        <div *ngFor="let attribute of species.bonuses.attributes" class="character-species-bonus">
+          {{attribute.name}}: {{attribute.value}}
+        </div>
+        <br>
+        <strong>Skills</strong> -
+        <div *ngFor="let skill of species.bonuses.skills" class="character-species-bonus">
+          {{skill.name}}: {{skill.value}}
+        </div>
+      </div>
+      <div *ngIf="species.abilities" class="character-species-abilities">
+        <hr>
+        <h3>Special Abilities</h3>
+        <div *ngFor="let ability of species.abilities">
+        <strong>{{ability.name}}</strong> - {{ability.description}}
+        </div>
+      </div>
+      <button mat-raised-button color="primary" style="float: right" (click)="updateHeroSpecies(species)">Select Species</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+    <!--
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title class="character-species-name-human">
@@ -54,6 +92,4 @@
           Cost: 160 XP
         </mat-panel-description>
       </mat-expansion-panel-header>
-    </mat-expansion-panel>
-  </mat-accordion>
-</mat-card>
+    </mat-expansion-panel> -->

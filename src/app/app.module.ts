@@ -11,7 +11,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
-import { MatExpansionModule } from '@angular/material/expansion'
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -31,6 +34,7 @@ import { HeroBuilderNavbarComponent } from './hero-builder-navbar/hero-builder-n
 import { HeroBuilderSpeciesComponent } from './hero-builder-species/hero-builder-species.component';
 import { HeroBuilderArchetypeComponent } from './hero-builder-archetype/hero-builder-archetype.component';
 import { HeroBuilderStatsComponent } from './hero-builder-stats/hero-builder-stats.component';
+import { HeroBuilderFactionComponent } from './hero-builder-faction/hero-builder-faction.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,7 @@ import { HeroBuilderStatsComponent } from './hero-builder-stats/hero-builder-sta
     HeroBuilderSpeciesComponent,
     HeroBuilderArchetypeComponent,
     HeroBuilderStatsComponent,
+    HeroBuilderFactionComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,10 @@ import { HeroBuilderStatsComponent } from './hero-builder-stats/hero-builder-sta
     MatInputModule,
     MatCardModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

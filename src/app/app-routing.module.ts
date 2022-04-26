@@ -8,6 +8,7 @@ import { HeroBuilderInfoComponent } from './hero-builder-info/hero-builder-info.
 import { HeroBuilderSpeciesComponent } from './hero-builder-species/hero-builder-species.component';
 import { HeroBuilderArchetypeComponent } from './hero-builder-archetype/hero-builder-archetype.component';
 import { HeroBuilderStatsComponent } from './hero-builder-stats/hero-builder-stats.component';
+import { HeroBuilderFactionComponent } from './hero-builder-faction/hero-builder-faction.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
       children: [
         {path: 'info', component: HeroBuilderInfoComponent},
         {path: 'species', component: HeroBuilderSpeciesComponent},
+        {path: 'faction', component: HeroBuilderFactionComponent},
         {path: 'archetype', component: HeroBuilderArchetypeComponent},
         {path: 'stats', component: HeroBuilderStatsComponent}
       ]

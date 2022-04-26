@@ -2,12 +2,13 @@
   {{hero.name}}
 </div>
 <div *ngIf="hero" class="character-archetype-species">
-  {{hero.archetype}} | {{hero.species}}
+  {{hero.archetype}} | {{hero.species.name}}
 </div>
 <div *ngIf="hero" class="character-tier-rank-xp">
-  Tier {{hero.tier}} | Rank {{hero.rank}} | {{hero.xp}} XP
+  Tier {{hero.tier}} | Rank {{hero.rank}} | {{hero.totalXp}} XP
 </div>
 <hr>
 <div *ngIf="hero && hero.keywords" class="character-keywords">
   {{hero.keywords.join(" | ")}}
 </div>
+<button (click)="debug()"></button>
