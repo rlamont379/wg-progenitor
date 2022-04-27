@@ -7,6 +7,7 @@ import { HeroService } from '../hero.service';
 import { Species } from '../species';
 import { Faction } from '../faction';
 import { FactionService } from '../faction.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-hero-builder-faction',
@@ -23,6 +24,7 @@ export class HeroBuilderFactionComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
+    private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -38,10 +40,9 @@ export class HeroBuilderFactionComponent implements OnInit {
       });
   }
 
-  filterFactionsBySpecies(species: string, factions: Faction[]): void {8
+  filterFactionsBySpecies(species: string, factions: Faction[]): void {
     for (var i in factions) {
-      if (factions[i].species != species) {
-      } else {
+      if (factions[i].species == species) {
         this.factions.push(factions[i]);
       }
     }
@@ -59,10 +60,14 @@ export class HeroBuilderFactionComponent implements OnInit {
   updateHeroFaction(faction: Faction): void {
     if (this.hero) {
       this.hero.faction = faction;
-      console.log(this.hero.faction);
       this.heroService.updateHero(this.hero)
         .subscribe(hero => this.hero = hero);
       this.router.navigate(['../archetype'], { relativeTo: this.route });
+      this.openSaveSnackBar();
     }
+  }
+
+  openSaveSnackBar(): void {
+    this.snackBar.open("Saved", "OK", {duration: 2000});
   }
 }

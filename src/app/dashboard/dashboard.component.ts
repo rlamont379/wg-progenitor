@@ -27,8 +27,4 @@ export class DashboardComponent implements OnInit {
         this.heroes.push(hero);
       });
   }
-
-  debug(): void {
-    console.log(this.heroes);
-  }
 }

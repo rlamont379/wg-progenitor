@@ -1,8 +1,8 @@
 <div *ngIf="hero" class="character-name">
   {{hero.name}}
 </div>
-<div *ngIf="hero" class="character-archetype-species">
-  {{hero.archetype}} | {{hero.species.name}}
+<div *ngIf="hero && hero.archetype" class="character-archetype-species">
+  {{hero.archetype.name}} | {{hero.species.name}}
 </div>
 <div *ngIf="hero" class="character-tier-rank-xp">
   Tier {{hero.tier}} | Rank {{hero.rank}} | {{hero.totalXp}} XP

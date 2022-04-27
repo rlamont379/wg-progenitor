@@ -1,5 +1,7 @@
-import { Faction } from "./faction";
 import { Species } from "./species";
+import { Faction } from "./faction";
+import { Archetype } from "./archetype";
+
 
 export interface Hero {
   id: number;
@@ -13,7 +15,7 @@ export interface Hero {
   totalXp: number;
   species: Species;
   faction?: Faction;
-  archetype?: string;
+  archetype?: Archetype;
   keywords?: string[];
   background?: string;
   languages?: string[];

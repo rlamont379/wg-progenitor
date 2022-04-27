@@ -37,11 +37,11 @@ export class HeroBuilderInfoComponent implements OnInit {
       this.heroService.updateHero(this.hero)
         .subscribe(hero => this.hero = hero);
       this.router.navigate(['../species'], { relativeTo: this.route });
-      this.openSnackBar();
+      this.openSaveSnackBar();
     }
   }
 
-  openSnackBar(): void {
+  openSaveSnackBar(): void {
     this.snackBar.open("Saved", "OK", {duration: 2000});
   }
 }

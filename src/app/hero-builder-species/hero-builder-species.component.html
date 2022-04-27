@@ -18,14 +18,18 @@
       <div *ngIf="species.bonuses">
         <hr>
         <h3>Bonuses</h3>
-        <strong>Attributes</strong> -
-        <div *ngFor="let attribute of species.bonuses.attributes" class="character-species-bonus">
-          {{attribute.name}}: {{attribute.value}}
+        <div *ngIf="species.bonuses.attributes">
+          <strong>Attributes</strong> -
+          <div *ngFor="let attribute of species.bonuses.attributes" class="character-species-bonus">
+            {{attribute.name}}: {{attribute.value}}
+          </div>
+          <br>
         </div>
-        <br>
-        <strong>Skills</strong> -
-        <div *ngFor="let skill of species.bonuses.skills" class="character-species-bonus">
-          {{skill.name}}: {{skill.value}}
+        <div *ngIf="species.bonuses.skills">
+          <strong>Skills</strong> -
+          <div *ngFor="let skill of species.bonuses.skills" class="character-species-bonus">
+            {{skill.name}}: {{skill.value}}
+          </div>
         </div>
       </div>
       <div *ngIf="species.abilities" class="character-species-abilities">

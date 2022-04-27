@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { HeroService } from '../hero.service';
 import { Species } from '../species';
 import { SpeciesService } from '../species.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-hero-builder-species',
@@ -22,6 +23,7 @@ export class HeroBuilderSpeciesComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
+    private snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -46,6 +48,11 @@ export class HeroBuilderSpeciesComponent implements OnInit {
       this.heroService.updateHero(this.hero)
         .subscribe(hero => this.hero = hero);
       this.router.navigate(['../faction'], { relativeTo: this.route });
+      this.openSaveSnackBar();
     }
+  }
+
+  openSaveSnackBar(): void {
+    this.snackBar.open("Saved", "OK", {duration: 2000});
   }
 }

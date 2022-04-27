@@ -2,7 +2,47 @@
   <mat-card-title>Archetype</mat-card-title>
   <mat-card-subtitle>A broad mind lacks focus.</mat-card-subtitle>
   <mat-accordion class="character-archetype-options">
-    <h2>Adeptus Ministorum</h2>
+    <mat-expansion-panel *ngFor="let archetype of archetypes">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="character-archetype-name">
+          {{archetype.name}}
+        </mat-panel-title>
+        <mat-panel-description class="character-archetype-cost">
+          Cost: {{archetype.cost}} XP
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="character-archetype-description" style="font-style: italic">
+        {{archetype.description}}
+      </p>
+      <div *ngIf="archetype.bonuses">
+        <hr>
+        <h3>Bonuses</h3>
+        <div *ngIf="archetype.bonuses.attributes">
+          <strong>Attributes</strong> -
+          <div *ngFor="let attribute of archetype.bonuses.attributes" class="character-archetype-bonus">
+            {{attribute.name}}: {{attribute.value}}
+          </div>
+          <br>
+        </div>
+        <div *ngIf="archetype.bonuses.skills">
+          <strong>Skills</strong> -
+          <div *ngFor="let skill of archetype.bonuses.skills" class="character-archetype-bonus">
+            {{skill.name}}: {{skill.value}}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="archetype.abilities" class="character-archetype-abilities">
+        <hr>
+        <h3>Special Abilities</h3>
+        <div *ngFor="let ability of archetype.abilities">
+        <strong>{{ability.name}}</strong> - {{ability.description}}
+        </div>
+      </div>
+      <button mat-raised-button color="primary" style="float: right" (click)="updateHeroArchetype(archetype)">Select Species</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+    <!--<h2>Adeptus Ministorum</h2>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title class="character-archetype-name">
@@ -63,6 +103,4 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p style="font-style: italic">A pious healer dedicated to care of both body and soul.</p>
-    </mat-expansion-panel>
-  </mat-accordion>
-</mat-card>
+    </mat-expansion-panel> -->

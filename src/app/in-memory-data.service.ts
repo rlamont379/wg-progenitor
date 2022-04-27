@@ -102,7 +102,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Ancient and inscrutable, the Aeldari are an innately psychic Species whose technologically-advanced empire once spanned the stars. Taller and slighter than Humans, their undeniably alien appearance is compounded by their eerily elegant movements. Though they have life spans millennia longer than Humans, their Species is dying and close to extinction — a pain they feel acutely with their unnaturally deep emotions.",
         speed: 8,
         bonuses: {
-          attributes:[
+          attributes: [
             {
               name: "Agilility",
               value: 3
@@ -129,6 +129,28 @@ export class InMemoryDataService implements InMemoryDbService {
         cost: 20,
         description: "Savage, insensible brutes, these green skinned xenos monstrosities think only of war. Crude but inventive, they seek battle at any cost, fighting even amongst themselves when no other foe is available.",
         speed: 6,
+        bonuses: {
+          attributes: [
+            {
+              name: "Strength",
+              value: 3,
+            },
+            {
+              name: "Toughness",
+              value: 3,
+            }
+          ],
+        },
+        abilities: [
+          {
+            name: "Orky",
+            description: "+1 bonus dice to Intimidation tests."
+          },
+          {
+            name: "Bigger is Better",
+            description: "You calculate Influence using Strength instead of Fellowship."
+          }
+        ]
       },
       {
         name: "Astartes",
@@ -369,8 +391,66 @@ export class InMemoryDataService implements InMemoryDbService {
           "Chaos Space Marine",
         ]
       },
+    ];
+
+    const archetypes = [
+      {
+        name: "Sister Hospitaller",
+        description: "A battlefield healer of both mind and soul. You ministrate to the injured with great Medicae expertise and inspire the pious with your cavernous well of faith.",
+        faction: "Adepta Sororitas",
+        tier: 1,
+        cost: 24,
+        bonuses: {
+          attributes: [
+            {
+              name: "Intellect",
+              value: 3,
+            },
+            {
+              name: "Willpower",
+              value: 3,
+            },
+          ],
+          skills: [
+            {
+              name: "Medicae",
+              value: 1,
+            },
+            {
+              name: "Scholar",
+              value: 1,
+            }
+          ]
+        },
+        abilities: [
+          {
+            name: "Loyal Compassion",
+            description: "+Double Rank bonus dice whenever you make a Medicae (Int) Test on a character with the IMPERIUM keyword."
+          },
+        ],
+        wargear: [
+          {
+            name: "Sororitas Power Armour"
+          },
+          {
+            name: "Chirurgeon's Tools"
+          },
+          {
+            name: "Chain Bayonet"
+          },
+          {
+            name: "Laspistol"
+          },
+          {
+            name: "Clothing"
+          },
+          {
+            name: "Rule of the Sororitas"
+          },
+        ]
+      },
     ]
-    return {heroes, species, factions};
+    return {heroes, species, factions, archetypes};
   }
 
   // Overrides the genId method to ensure that a hero always has an id.

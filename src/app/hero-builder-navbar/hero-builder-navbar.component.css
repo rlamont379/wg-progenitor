@@ -3,5 +3,6 @@ mat-icon {
 }
 
 .activebutton {
-  color:#FF9800;
+  color: #F57C00;
+  background-color: #303F9F;
 }
