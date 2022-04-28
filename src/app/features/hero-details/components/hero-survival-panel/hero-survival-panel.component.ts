@@ -1,41 +1,29 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../../../../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../hero.service';
+import { HeroService } from '../../../../hero.service';
 
 @Component({
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
-  styleUrls: ['./hero-detail.component.css']
+  selector: 'app-hero-survival-panel',
+  templateUrl: './hero-survival-panel.component.html',
+  styleUrls: ['./hero-survival-panel.component.css']
 })
-export class HeroDetailComponent implements OnInit {
+export class HeroSurvivalPanelComponent implements OnInit {
   @Input() hero?: Hero;
 
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getHero();
-  }
-
-  goBack(): void {
-    this.location.back();
   }
 
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
-  }
-
-  save(): void {
-    if (this.hero) {
-      this.heroService.updateHero(this.hero)
-        .subscribe(() => this.goBack())
-    }
   }
 }

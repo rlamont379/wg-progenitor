@@ -18,23 +18,23 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroDetailComponent } from './features/hero-details/views/hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeroBuilderComponent } from './hero-builder/hero-builder.component';
-import { HeroInfoPanelComponent } from './hero-info-panel/hero-info-panel.component';
-import { HeroSurvivalPanelComponent } from './hero-survival-panel/hero-survival-panel.component';
-import { HeroAttributesPanelComponent } from './hero-attributes-panel/hero-attributes-panel.component';
-import { HeroTraitsPanelComponent } from './hero-traits-panel/hero-traits-panel.component';
-import { HeroSkillsPanelComponent } from './hero-skills-panel/hero-skills-panel.component';
-import { HeroBuilderInfoComponent } from './hero-builder-info/hero-builder-info.component';
-import { HeroBuilderNavbarComponent } from './hero-builder-navbar/hero-builder-navbar.component';
-import { HeroBuilderSpeciesComponent } from './hero-builder-species/hero-builder-species.component';
-import { HeroBuilderArchetypeComponent } from './hero-builder-archetype/hero-builder-archetype.component';
-import { HeroBuilderStatsComponent } from './hero-builder-stats/hero-builder-stats.component';
-import { HeroBuilderFactionComponent } from './hero-builder-faction/hero-builder-faction.component';
+import { HeroBuilderComponent } from './features/hero-builder/views/hero-builder/hero-builder.component';
+import { HeroInfoPanelComponent } from './features/hero-details/components/hero-info-panel/hero-info-panel.component';
+import { HeroSurvivalPanelComponent } from './features/hero-details/components/hero-survival-panel/hero-survival-panel.component';
+import { HeroAttributesPanelComponent } from './features/hero-details/components/hero-attributes-panel/hero-attributes-panel.component';
+import { HeroTraitsPanelComponent } from './features/hero-details/components/hero-traits-panel/hero-traits-panel.component';
+import { HeroSkillsPanelComponent } from './features/hero-details/components/hero-skills-panel/hero-skills-panel.component';
+import { HeroBuilderInfoComponent } from './features/hero-builder/components/hero-builder-info/hero-builder-info.component';
+import { HeroBuilderNavbarComponent } from './features/hero-builder/components/hero-builder-navbar/hero-builder-navbar.component';
+import { HeroBuilderSpeciesComponent } from './features/hero-builder/components/hero-builder-species/hero-builder-species.component';
+import { HeroBuilderArchetypeComponent } from './features/hero-builder/components/hero-builder-archetype/hero-builder-archetype.component';
+import { HeroBuilderStatsComponent } from './features/hero-builder/components/hero-builder-stats/hero-builder-stats.component';
+import { HeroBuilderFactionComponent } from './features/hero-builder/components/hero-builder-faction/hero-builder-faction.component';
 
 @NgModule({
   declarations: [

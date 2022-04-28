@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../../../../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../hero.service';
+import { HeroService } from '../../../../hero.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -42,6 +42,6 @@ export class HeroBuilderInfoComponent implements OnInit {
   }
 
   openSaveSnackBar(): void {
-    this.snackBar.open("Saved", "OK", {duration: 2000});
+    this.snackBar.open("Saved Info", "OK", {duration: 4000});
   }
 }

@@ -12,7 +12,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const heroes = [
       {
         id: 1,
-        name: 'Mr. Nice',
+        name: 'Baseplate',
         tier: 1,
         rank: 1,
         speciesXp: 0,
@@ -86,7 +86,6 @@ export class InMemoryDataService implements InMemoryDbService {
 
         abilities: ["Lie, Cheat, Steal"],
       },
-      { id: 2, name: 'Narco' },
     ];
 
     const species = [

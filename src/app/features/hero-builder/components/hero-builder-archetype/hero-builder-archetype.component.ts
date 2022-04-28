@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../../../../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../hero.service';
-import { Archetype } from '../archetype';
-import { ArchetypeService } from '../archetype.service';
-import { Faction } from '../faction';
+import { HeroService } from '../../../../hero.service';
+import { Archetype } from '../../../../archetype';
+import { ArchetypeService } from '../../../../archetype.service';
+import { Faction } from '../../../../faction';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
@@ -44,7 +44,6 @@ export class HeroBuilderArchetypeComponent implements OnInit {
   filterArchetypesByFaction(faction: string, archetypes: Archetype[]): void {
     for (var i in archetypes) {
       if (archetypes[i].faction == faction) {
-        console.log(archetypes[i]);
         this.archetypes.push(archetypes[i]);
       }
     }
@@ -62,7 +61,6 @@ export class HeroBuilderArchetypeComponent implements OnInit {
   updateHeroArchetype(archetype: Archetype): void {
     if (this.hero) {
       this.hero.archetype = archetype;
-      console.log(this.hero.archetype);
       this.heroService.updateHero(this.hero)
         .subscribe(hero => this.hero = hero);
       this.router.navigate(['../stats'], { relativeTo: this.route });
@@ -71,6 +69,6 @@ export class HeroBuilderArchetypeComponent implements OnInit {
   }
 
   openSaveSnackBar(): void {
-    this.snackBar.open("Saved", "OK", {duration: 2000});
+    this.snackBar.open("Saved Archetype", "OK", {duration: 4000});
   }
 }

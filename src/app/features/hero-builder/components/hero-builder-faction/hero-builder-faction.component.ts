@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../hero';
+import { Hero } from '../../../../hero';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../hero.service';
-import { Species } from '../species';
-import { Faction } from '../faction';
-import { FactionService } from '../faction.service';
+import { HeroService } from '../../../../hero.service';
+import { Species } from '../../../../species';
+import { Faction } from '../../../../faction';
+import { FactionService } from '../../../../faction.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -68,6 +68,6 @@ export class HeroBuilderFactionComponent implements OnInit {
   }
 
   openSaveSnackBar(): void {
-    this.snackBar.open("Saved", "OK", {duration: 2000});
+    this.snackBar.open("Saved Faction", "OK", {duration: 4000});
   }
 }

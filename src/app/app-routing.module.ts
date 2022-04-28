@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { HeroBuilderComponent } from './hero-builder/hero-builder.component';
-import { HeroBuilderInfoComponent } from './hero-builder-info/hero-builder-info.component';
-import { HeroBuilderSpeciesComponent } from './hero-builder-species/hero-builder-species.component';
-import { HeroBuilderArchetypeComponent } from './hero-builder-archetype/hero-builder-archetype.component';
-import { HeroBuilderStatsComponent } from './hero-builder-stats/hero-builder-stats.component';
-import { HeroBuilderFactionComponent } from './hero-builder-faction/hero-builder-faction.component';
+import { HeroDetailComponent } from './features/hero-details/views/hero-detail/hero-detail.component';
+import { HeroBuilderComponent } from './features/hero-builder/views/hero-builder/hero-builder.component';
+import { HeroBuilderInfoComponent } from './features/hero-builder/components/hero-builder-info/hero-builder-info.component';
+import { HeroBuilderSpeciesComponent } from './features/hero-builder/components/hero-builder-species/hero-builder-species.component';
+import { HeroBuilderArchetypeComponent } from './features/hero-builder/components/hero-builder-archetype/hero-builder-archetype.component';
+import { HeroBuilderStatsComponent } from './features/hero-builder/components/hero-builder-stats/hero-builder-stats.component';
+import { HeroBuilderFactionComponent } from './features/hero-builder/components/hero-builder-faction/hero-builder-faction.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
