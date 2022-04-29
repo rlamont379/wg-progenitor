@@ -27,40 +27,47 @@ export class HeroAttributesPanelComponent implements OnInit {
 
   ngDoCheck(): void {
     this.ATTR_DATA = [
-      { name: "Strength",
+      { 
+        name: "Strength",
         rating: this.hero?.strRating as number,
         bonus: this.hero?.strBonus as number,
         total: this.hero?.strTotal as number,
       },
-      { name: "Toughness",
+      { 
+        name: "Toughness",
         rating: this.hero?.toughRating as number,
         bonus: this.hero?.toughBonus as number,
         total: this.hero?.toughTotal as number,
       },
-      { name: "Agility",
+      { 
+        name: "Agility",
         rating: this.hero?.agiRating as number,
         bonus: this.hero?.agiBonus as number,
         total: this.hero?.agiTotal as number,
       },
-      { name: "Initiative",
+      { 
+        name: "Initiative",
         rating: this.hero?.initRating as number,
         bonus: this.hero?.initBonus as number,
         total: this.hero?.initTotal as number,
       },
-      { name: "Willpower",
-      rating: this.hero?.wilRating as number,
-      bonus: this.hero?.wilBonus as number,
-      total: this.hero?.wilTotal as number,
+      { 
+        name: "Willpower",
+        rating: this.hero?.wilRating as number,
+        bonus: this.hero?.wilBonus as number,
+        total: this.hero?.wilTotal as number,
       },
-      { name: "Intellect",
-      rating: this.hero?.intRating as number,
-      bonus: this.hero?.intBonus as number,
-      total: this.hero?.intTotal as number,
+      { 
+        name: "Intellect",
+        rating: this.hero?.intRating as number,
+        bonus: this.hero?.intBonus as number,
+        total: this.hero?.intTotal as number,
       },
-      { name: "Fellowship",
-      rating: this.hero?.felRating as number,
-      bonus: this.hero?.felBonus as number,
-      total: this.hero?.felTotal as number,
+      { 
+        name: "Fellowship",
+        rating: this.hero?.felRating as number,
+        bonus: this.hero?.felBonus as number,
+        total: this.hero?.felTotal as number,
       },
     ]
     this.attrSource = new MatTableDataSource(this.ATTR_DATA)

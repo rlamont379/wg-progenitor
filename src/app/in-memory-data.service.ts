@@ -269,6 +269,20 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         species: "Human",
+        name: "Adeptus Ministorum",
+        description: "The Adeptus Ministorum is the official state church of the Imperium. More commonly known as the Ecclesiarchy, they practise and preach the Cult Imperialis, a religion founded in the belief that the God-Emperor is divine being. Tasked with ministering to the spiritual health of the Imperium, the Ecclesiarchy spread and enforce the teachings of the Cult throughout the Emperor's vast domain.",
+        keywords: [
+          "IMPERIUM",
+          "ADEPTUS MINISTORUM",
+        ],
+        archetypes: [
+          "Ministorum Priest",
+          "Death Cult Assassin",
+          "Crusader"
+        ]
+      },
+      {
+        species: "Human",
         name: "Astra Militarum",
         description: "The galaxy's greatest army, the Astra Militarum, is the massed military force of Humanity. The Imperial Guard is made up of women and men from every world of the Imperium; neither genetically or mechanically enhanced, they rely on blind faith, dogged determination, and endless numbers to defeat Humanity's frightful foes. Human lives are spent as freely as bullets, all willing sacrifices to see the Emperor's will done and His realm defended.",
         keywords: [
@@ -318,7 +332,9 @@ export class InMemoryDataService implements InMemoryDbService {
           "[DYNASTY]",
         ],
         archetypes: [
-          "Rogue Trader",
+          "Ganger",
+          "Scavvy",
+          "Desperado",
         ]
       },
       {
@@ -428,24 +444,438 @@ export class InMemoryDataService implements InMemoryDbService {
           },
         ],
         wargear: [
+          "Sororitas Power Armour",
+          "Chirurgeon's Tools",
+          "Chain Bayonet",
+          "Laspistol",
+          "Clothing",
+          "Rule of the Sororitas",
+        ]
+      },
+      {
+        name: "Sister of Battle",
+        description: "An unwavering warrior of righteous determination, you are a warrior monk, raising battle hymns as you zealously destroy the Emperor's foes.",
+        faction: "Adepta Sororitas",
+        tier: 2,
+        cost: 64,
+        bonuses: {
+          attributes: [
+            {
+              name: "Strength",
+              value: 3
+            },
+            {
+              name: "Agility",
+              value: 3
+            },
+            {
+              name: "Toughness",
+              value: 3
+            },
+            {
+              name: "Willpower",
+              value: 3
+            },
+          ],
+          skills: [
+            {
+              name: "Scholar",
+              value: 1
+            },
+            {
+              name: "Ballistic Skill",
+              value: 2
+            },
+            {
+              name: "Weapon Skill",
+              value: 2
+            },
+          ],
+          influence: 1,
+        },
+        abilities: [
           {
-            name: "Sororitas Power Armour"
+            name: "Purity of Faith",
+            description: "You and any allies within 15 metres gain +Double Rank bonus dice to Corruption Tests. You gain +Double Rank bonus dice to any Test to resist the effects of a Psychic Power."
+          }
+        ],
+        wargear: [
+          "Sororitas Power Armor",
+          "Chaplet Ecclesiasticus",
+          "Boltgun OR Chainsword & Bolt Pistol",
+          "Clothing",
+          "Writing Kit",
+          "Rule of the Sororitas",
+        ]
+      },
+      {
+        name: "Sanctioned Psyker",
+        description: "A mutant capable of channelling the Warp to manipulate reality.",
+        faction: "Adeptus Astra Telepathica",
+        tier: 2,
+        cost: 32,
+        bonuses: {
+          attributes: [
+            {
+              name: "Willpower",
+              value: 4
+            },
+          ],
+          skills: [
+            {
+              name: "Psychic Mastery",
+              value: 1
+            },
+          ],
+        },
+        abilities: [
+          {
+            name: "Psyker",
+            description: "You know 1 Minor Psychic Power and the Smite psychic power. You may purchase additional psychic powers, following the rules in Chapter 11."
           },
           {
-            name: "Chirurgeon's Tools"
-          },
+            name: "Unlock Disciplines",
+            description: "You gain access to the Minor and Universal Disciplines. You unlock an additional single Psychic Discipline, following the rules in Chapter 11."
+          }
+        ],
+        wargear: [
+          "Laspistol",
+          "Force Stave",
+          "Psykana Mercy Blade",
+          "Munitorum-Issue Mess Kit",
+          "Blanket",
+          "Grooming Kit",
+          "2x Ration Pack",
+        ]
+      },
+      {
+        name: "Skitarius",
+        description: "A soldier more of steel than sinew, you are a member of the standing army of the Adeptus Mechanicus.",
+        faction: "Adeptus Mechanicus",
+        tier: 2,
+        cost: 28,
+        bonuses: {
+          attributes: [
+            {
+              name: "Toughness",
+              value: 3
+            },
+          ],
+          skills: [
+            {
+              name: "Ballistic Skill",
+              value: 2
+            },
+            {
+              name: "Tech",
+              value: 1
+            },
+          ],
+        },
+        abilities: [
           {
-            name: "Chain Bayonet"
+            name: "Heavily Augmented",
+            description: "Your body has been redesigned to withstand the rigours of war. You do not bleed (making you immune to the Bleeding) and gain +Rank bonus dice to Determination rolls."
           },
+        ],
+        wargear: [
+          "Combi-Tool",
+          "Galvanic Rifle",
+          "Skitarii Auto-Cuirass",
+        ]
+      },
+      {
+        name: "Tech-Priest",
+        description: "A high-ranking member of the Adeptus Mechanicus, technology and religion are as one to you, and you are truly devout.",
+        faction: "Adeptus Mechanicus",
+        tier: 3,
+        cost: 44,
+        bonuses: {
+          attributes: [
+            {
+              name: "Willpower",
+              value: 4
+            },
+          ],
+          skills: [
+            {
+              name: "Psychic Mastery",
+              value: 1
+            },
+          ],
+          keywords: [
+            "CULT MECHANICUS"
+          ],
+          influence: 2,
+        },
+        abilities: [
           {
-            name: "Laspistol"
+            name: "Rite of Repair",
+            description: "You receive +Double Rank to Tech (Int) Tests to repair damaged machinery. All Tech (Int) Tests you make take half the standard time."
           },
+        ],
+        wargear: [
+          "Omnissian Axe",
+          "Laspistol",
+          "One Mechadendrite",
+          "Any 2 Augmetics",
+          "Combi-Tool",
+          "Light Power Armour",
+          "Omnissian Sigil (Symbol of Authority)"
+        ]
+      },
+      {
+        name: "Ministorum Priest",
+        description: "An unwavering warrior of righteous determination, you are a warrior monk, raising battle hymns as you zealously destroy the Emperor's foes.",
+        faction: "Adeptus Ministorum",
+        tier: 1,
+        cost: 12,
+        bonuses: {
+          attributes: [
+            {
+              name: "Willpower",
+              value: 3
+            },
+          ],
+          skills: [
+            {
+              name: "Scholar",
+              value: 1
+            },
+          ],
+        },
+        abilities: [
           {
-            name: "Clothing"
-          },
+            name: "Fiery Invective",
+            description: "You can preach the word of the Imperial Creed as a Free Action once per combat. You and all allies with the IMPERIUM keyword heal 1d3+Rank Shock."
+          }
+        ],
+        wargear: [
+          "Chainsword",
+          "Laspistol",
+          "Rosarius",
+          "Knife",
+          "Clothing",
+          "Missionary Kit",
+        ]
+      },
+      {
+        name: "Death Cult Assassin",
+        description: "A zealot of an extremist sect, you honour the Emperor's sacrifice for humanity through the ritual slaughter of His enemies.",
+        faction: "Adeptus Ministorum",
+        tier: 2,
+        cost: 36,
+        bonuses: {
+          attributes: [
+            {
+              name: "Agility",
+              value: 4
+            },
+          ],
+          skills: [
+            {
+              name: "Weapon Skill",
+              value: 2
+            },
+          ],
+        },
+        abilities: [
           {
-            name: "Rule of the Sororitas"
-          },
+            name: "Glancing Blow",
+            description: "You depend upon your swift movement and honed reflexes to avoid harm. You may use your Agility instead of your Toughness when you roll Determination against Damage from attacks, and may roll Determination against Mortal Wounds. You cannot use this ability if you are immobilised in some way, such as through the Restrained Condition."
+          }
+        ],
+        wargear: [
+          "2x Death Cult Powerblade",
+          "Bodyglove",
+          "Knife",
+          "Laspistol",
+          "3x dose of Stimm",
+        ],
+        influence: 1,
+      },
+      {
+        name: "Crusader",
+        description: "A warrior-monk of the Ecclesiarchy, worship to the Emperor and single combat against His foes as one to you.",
+        faction: "Adeptus Ministorum",
+        tier: 3,
+        cost: 54,
+        bonuses: {
+          attributes: [
+            {
+              name: "Initiative",
+              value: 3
+            },
+            {
+              name: "Willpower",
+              value: 3
+            },
+          ],
+          skills: [
+            {
+              name: "Scholar",
+              value: 1
+            },
+            {
+              name: "Weapon Skill",
+              value: 3
+            },
+          ],
+          influence: 1,
+        },
+        abilities: [
+          {
+            name: "Armour of Faith",
+            description: "You gain +Double Rank bonus dice to melee attack tests against targets with the CHAOS or HERETIC keyword. Your Resolve also increases by +Rank."
+          }
+        ],
+        wargear: [
+          "Power Sword",
+          "Storm Shield",
+          "Carapace Armour",
+          "Clothing",
+        ]
+      },
+      {
+        name: "Imperial Guardsman",
+        description: "A footsoldier in the galaxy's greatest army. You are one of billions of raw recruits trained to stand and fire against the monstrous enemies of humanity.",
+        faction: "Astra Militarum",
+        tier: 1,
+        cost: 6,
+        bonuses: {
+          skills: [
+            {
+              name: "Ballistic Skill",
+              value: 2
+            },
+          ],
+          keywords: ["[REGIMENT]"]
+        },
+        abilities: [
+          {
+            name: "Look Out, Sir!",
+            description: "You have been drilled in sacrificing yourself to save your allies. Once per combat, you may take a Reflexive Action to move up to half your Speed to get in the way of any attack that hit an ally. The attacker then rolls against your Resilience instead of your ally’s, and may deal Wounds to you. Your Resilience increases by +Rank for the purpose of calculating damage."
+          }
+        ],
+        wargear: [
+          "Flak Armour",
+          "Lasgun",
+          "Knife",
+          "Munitorum-Issue Mess Kit",
+          "Grooming Kit",
+          "Uplifting Primer",
+          "3x Ration Pack"
+        ]
+      },
+      {
+        name: "Tempestus Scion",
+        description: "You are a highly trained elite shock trooper of the Astra Militarum.",
+        faction: "Astra Militarum",
+        tier: 2,
+        cost: 52,
+        bonuses: {
+          attributes: [
+            {
+              name: "Strength",
+              value: 3
+            },
+            {
+              name: "Toughness",
+              value: 3
+            },
+            {
+              name: "Agility",
+              value: 3
+            },
+          ],
+          skills: [
+            {
+              name: "Ballistic Skill",
+              value: 2
+            },
+            {
+              name: "Stealth",
+              value: 2
+            },
+          ],
+          keywords: ["MILITARUM TEMPEST"],
+          influence: 1,
+        },
+        abilities: [
+          {
+            name: "Elite Soldier",
+            description: "You're an expert in inflicting pain through the weapons of the Imperium. Whenever you spend Glory to increase damage when using a weapon with the ASTRA MILITARUM you can add +Rank to the final damage value."
+          }
+        ],
+        wargear: [
+          "Tempestus Carapace",
+          "Hot-Shot Lasgun",
+          "Grav-Chute",
+          "Knife",
+          "Munitorum-Issue Mess Kit",
+          "Uplifting Primer",
+          "Slate Monitron",
+          "Monoscope",
+          "3x Ration Pack",
+        ]
+      },
+      {
+        name: "Imperial Commissar",
+        description: "A warrior-monk of the Ecclesiarchy, worship to the Emperor and single combat against His foes as one to you.",
+        faction: "Astra Militarum",
+        tier: 3,
+        cost: 76,
+        bonuses: {
+          attributes: [
+            {
+              name: "Strength",
+              value: 3
+            },
+            {
+              name: "Toughness",
+              value: 3
+            },
+            {
+              name: "Willpower",
+              value: 4
+            }
+          ],
+          skills: [
+            {
+              name: "Ballistic Skill",
+              value: 1
+            },
+            {
+              name: "Intimidation",
+              value: 2
+            },
+            {
+              name: "Leadership",
+              value: 2
+            },
+            {
+              name: "Weapon Skill",
+              value: 1
+            },
+          ],
+          keywords: ["OFFICIO PREFECTUS"],
+          influence: 3,
+        },
+        abilities: [
+          {
+            name: "Fearsome Respect",
+            description: "You and any allies within 15 metres of you that can see you may add +Double Rank bonus dice to Resolve Tests. You add +Double Rank bonus dice to any Intimidation (Wil) Tests, including Interaction Attacks."
+          }
+        ],
+        wargear: [
+          "Bolt Pistol",
+          "Chainsword",
+          "Flak Coat",
+          "Munitorum-Issue Mess Kit",
+          "Blanket",
+          "Grooming Kit",
+          "Uplifting Primer",
+          "3x Ration Pack",
         ]
       },
     ]

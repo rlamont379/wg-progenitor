@@ -7,8 +7,8 @@
         <mat-panel-title class="character-archetype-name">
           {{archetype.name}}
         </mat-panel-title>
-        <mat-panel-description class="character-archetype-cost">
-          Cost: {{archetype.cost}} XP
+        <mat-panel-description class="character-archetype-tier-cost">
+          Tier: {{archetype.tier}} | Cost: {{archetype.cost}} XP
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p class="character-archetype-description" style="font-style: italic">
@@ -30,12 +30,25 @@
             {{skill.name}}: {{skill.value}}
           </div>
         </div>
+        <div *ngIf="archetype.bonuses.keywords">
+          <strong>Keywords</strong> - {{archetype.bonuses.keywords.join(', ')}}
+        </div>
+        <div *ngIf="archetype.bonuses.influence">
+          <strong>Influence Bonus</strong>: +{{archetype.bonuses.influence}}
+        </div>
       </div>
       <div *ngIf="archetype.abilities" class="character-archetype-abilities">
         <hr>
         <h3>Special Abilities</h3>
         <div *ngFor="let ability of archetype.abilities">
         <strong>{{ability.name}}</strong> - {{ability.description}}
+        </div>
+      </div>
+      <div *ngIf="archetype.wargear" class="character-archetype-wargear">
+        <hr>
+        <h3>Wargear</h3>
+        <div>
+          {{archetype.wargear.join(', ')}}
         </div>
       </div>
       <button mat-raised-button color="primary" style="float: right" (click)="updateHeroArchetype(archetype)">Select Species</button>

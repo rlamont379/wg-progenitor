@@ -22,7 +22,5 @@ export interface Archetype {
     name: string;
     description?: string;
   }[]
-  wargear?: {
-    name: string;
-  }
+  wargear?: string[];
 }
