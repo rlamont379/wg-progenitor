@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from './hero';
-import { Faction } from './faction';
-import { Archetype } from './archetype';
+import { Hero } from 'src/app/shared/models/hero';
+import { Faction } from 'src/app/shared/models/faction';
+import { Archetype } from 'src/app/shared/models/archetype';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const heroes = [
-      {
+    const heroes: Array<Hero> = [
+      /*{
         id: 1,
         name: 'Baseplate',
         tier: 1,
@@ -85,7 +85,7 @@ export class InMemoryDataService implements InMemoryDbService {
         wargearGear: ["Shipping Manifest"],
 
         abilities: ["Lie, Cheat, Steal"],
-      },
+      },*/
     ];
 
     const species = [
@@ -327,9 +327,8 @@ export class InMemoryDataService implements InMemoryDbService {
         name: "Scum",
         description: "Those that do not directly serve the Imperium — citizens without assigned jobs, mercenaries, or, worst of all, those that call themselves 'adventurers' — are barely tolerated, and collectively classed as Scum. A broad, colloquially used term, 'Scum' could apply to a peasant citizen employed in a low-level or menial job outside of an adepta; planetary nobility often refer to anyone under them as Scum.",
         keywords: [
-          "IMPERIUM",
-          "ROGUE TRADER",
-          "[DYNASTY]",
+          "SCUM",
+          "[ANY]",
         ],
         archetypes: [
           "Ganger",
@@ -876,6 +875,377 @@ export class InMemoryDataService implements InMemoryDbService {
           "Grooming Kit",
           "Uplifting Primer",
           "3x Ration Pack",
+        ]
+      },
+      {
+        name: "Inquisitorial Acolyte",
+        description: "Conscripted to aid an Inquisitor, you identify and destroy threats to the Imperium.",
+        faction: "The Inquisition",
+        tier: 1,
+        cost: 6,
+        bonuses: {
+          attributes: [
+            {
+              name: "Strength",
+              value: 3
+            },
+            {
+              name: "Toughness",
+              value: 3
+            },
+            {
+              name: "Willpower",
+              value: 4
+            }
+          ],
+          skills: [
+            {
+              name: "Ballistic Skill",
+              value: 1
+            },
+            {
+              name: "Intimidation",
+              value: 2
+            },
+            {
+              name: "Leadership",
+              value: 2
+            },
+            {
+              name: "Weapon Skill",
+              value: 1
+            },
+          ],
+          keywords: ["[ANY]"],
+        },
+        abilities: [
+          {
+            name: "Inquisitorial Decree",
+            description: "You can invoke the name of your Inquisitor to gain +Rank bonus dice to any social Skill test when interacting with an individual with the IMPERIUM. You can only use this ability once per scene."
+          }
+        ],
+        wargear: [
+          "Flak Armour",
+          "Any two IMPERIUM weapons with a Value of 5 or less and a Rarity of Uncommon or lower",
+          "Symbol of Authority",
+        ]
+      },
+      {
+        name: "Inquisitorial Sage",
+        description: "You are a bureaucratic savant, an expert at sourcing and judiciously applying knowledge to serve the Imperium and your own ends.",
+        faction: "The Inquisition",
+        tier: 1,
+        cost: 16,
+        bonuses: {
+          attributes: [
+            {
+              name: "Intellect",
+              value: 3
+            },
+          ],
+          skills: [
+            {
+              name: "Scholar",
+              value: 2
+            },
+          ],
+          keywords: ["ADEPTUS ADMINISTRATUM"],
+          influence: 1,
+        },
+        abilities: [
+          {
+            name: "Administratum Records",
+            description: "You are particularly adept at navigating the Imperium’s colossal bureaucracy. You gain +Rank bonus dice whenever you make a Test to gather information from Imperial sources, typically on Influence or Investigation (Int) tests."
+          }
+        ],
+        wargear: [
+          "Administratum Robes",
+          "Laspistol",
+          "Knife",
+          "Auto Quill",
+          "Data-Slate",
+          "3 Scrolls of Ancient Records",
+        ]
+      },
+      {
+        name: "Rogue Trader",
+        description: "Gifted the rare freedom to explore the stars, you explore, trade, pillage, and conquer to expand the Imperium.",
+        faction: "Rogue Trader Dynasties",
+        tier: 2,
+        cost: 36,
+        bonuses: {
+          attributes: [
+            {
+              name: "Fellowship",
+              value: 3
+            },
+          ],
+          skills: [
+            {
+              name: "Awareness",
+              value: 1,
+            },
+            {
+              name: "Cunning",
+              value: 1,
+            },
+            {
+              name: "Insight",
+              value: 2,
+            },
+            {
+              name: "Persuasion",
+              value: 2,
+            },
+          ],
+          influence: 2,
+        },
+        abilities: [
+          {
+            name: "Warrant of Trade",
+            description: "You are a master of manipulating a situation to your advantage. You gain +Rank bonus dice to all Persuasion (Fel) Tests and Influence tests to acquire goods and services."
+          }
+        ],
+        wargear: [
+          "Imperial Frigate",
+          "Any two pieces of Wargear with a Value of your Tier +4 or less, and a Rarity of Rare or lower",
+          "Any of the following options: Flak Coat or Carapace Armour or Light Power Armour",
+        ]
+      },
+      {
+        name: "Ganger",
+        description: "A member of the Imperial underclass, your life is rife with violence and hardship. Your identity is tied to a territorial gang, a brutal reflection of lower hive life.",
+        faction: "Scum",
+        tier: 1,
+        cost: 2,
+        bonuses: {
+          skills: [
+            {
+              name: "Cunning",
+              value: 1,
+            },
+          ],
+          influence: 1,
+        },
+        abilities: [
+          {
+            name: "Scrounger",
+            description: "Your life with less has made you adept at finding spares and supplies in the most unlikely of places. You gain +Rank bonus dice to Cunning (Fel) Tests. Once per session you may make an Influence or Cunning Test to acquire an item, representing something you have prepared in advance."
+          }
+        ],
+        wargear: [
+          "A Knife or a Sword",
+          "Bedrool",
+          "Canteen",
+          "Gang colours",
+          "Any one of the following: a Laspistol or an Autopistol or a Hand Cannon or a Stubber"
+        ]
+      },
+      {
+        name: "Scavvy",
+        description: "You are a survivor of the worst conditions of Imperial society, moulded by horrendous environments into a purposeful, determined mutant.",
+        faction: "Scum",
+        tier: 2,
+        cost: 16,
+        bonuses: {
+          attributes: [
+            {
+              name: "Toughness",
+              value: 2,
+            }
+          ],
+          skills: [
+            {
+              name: "Survival",
+              value: 1,
+            },
+          ],
+          influence: -1,
+        },
+        abilities: [
+          {
+            name: "Mutant",
+            description: "Your life in the unsanitary underbelly of the Imperium has mutated you. Select two Mutations from the list of Scavvy Mutations on p.287. Whenever your Rank increases, you may select another Mutation from the list."
+          }
+        ],
+        wargear: [
+          "Choice of Laspistol or Autopistol",
+          "Knife",
+          "Bedroll",
+          "Canteen",
+          "Tattered Clothes"
+        ]
+      },
+      {
+        name: "Desperado",
+        description: "A lone outlaw beyond the Imperium's control, you are a skilled mercenary free of the constraints of Faction and family.",
+        faction: "Scum",
+        tier: 3,
+        cost: 52,
+        bonuses: {
+          attributes: [
+            {
+              name: "Agility",
+              value: 3,
+            },
+            {
+              name: "Intellect",
+              value: 2,
+            }
+          ],
+          skills: [
+            {
+              name: "Awareness",
+              value: 2,
+            },
+            {
+              name: "Cunning",
+              value: 2,
+            },
+            {
+              name: "Investigation",
+              value: 2,
+            },
+          ],
+          influence: 1,
+        },
+        abilities: [
+          {
+            name: "Valuable Prey",
+            description: "You gain +Rank bonus dice on Cunning Tests, and any Test made to track an individual."
+          }
+        ],
+        wargear: [
+          "Flak Coat",
+          "Preysense Goggles",
+          "Maps of the Heartworld",
+          "Combi-Tool",
+          "any PROJECTILE weapon",
+          "any melee weapon of Uncommon or lower Rarity",
+        ]
+      },
+      {
+        name: "Cultist",
+        description: "Hiding blasphemous brands and tattoos, myriad Chaos cults work from inside the Imperium to bring down the Emperor's people. Criminals hamstring Imperial efforts and steal crucial supplies whilst dark apostles sway other true believers to their villainous cause, spiraling toward revolt.",
+        faction: "Chaos",
+        tier: 1,
+        cost: 2,
+        bonuses: {
+          skills: [
+            {
+              name: "Cunning",
+              value: 1,
+            },
+          ],
+          keywords: ["SCUM", "[ANY]", "[MARK OF CHAOS]"],
+        },
+        abilities: [
+          {
+            name: "Enemy Within",
+            description: "You gain +Double Rank bonus dice to Deception (Fel) Tests, including Interaction Attacks, against targets with the IMPERIUM Keyword."
+          },
+          {
+            name: "Corruption",
+            description: "You gain 1d3 corruption.",
+          }
+        ],
+        wargear: [
+          "A Knife or a Sword",
+          "Bedrool",
+          "Canteen",
+          "Gang colours",
+          "Any one of the following: a Laspistol or an Autopistol or a Hand Cannon or a Stubber"
+        ]
+      },
+      {
+        name: "Rogue Psyker",
+        description: "Psykers that escape the tithes of the Black Ships are known as Rogue Psykers; untrained and vulnerable to the powers of Chaos, they may begin to worship the Dark Gods in exchange for the greater powers needed to avoid their pursuers and claim their newfound desires.",
+        faction: "Chaos",
+        tier: 2,
+        cost: 32,
+        bonuses: {
+          attributes: [
+            {
+              name: "Willpower",
+              value: "4",
+            }
+          ],
+          skills: [
+            {
+              name: "Psychic Mastery",
+              value: 1,
+            },
+          ],
+          keywords: ["PSYKER", "SCHOLASTICA PSYKANA"],
+        },
+        abilities: [
+          {
+            name: "Psyker",
+            description: "You know 1 Minor Psychic Power and the Smite psychic power. You may purchase additional psychic powers, following the rules in Chapter 11."
+          },
+          {
+            name: "Unlock Disciplines",
+            description: "You gain access to the Minor and Universal disciplines. You unlock an additional single Psychic Discipline, following the rules in Chapter 11."
+          },
+          {
+            name: "Corruption",
+            description: "You gain 1d3 x2 corruption.",
+          }
+        ],
+        wargear: [
+          "Laspistol",
+          "Force Stave",
+          "Psykana Mercy Blade",
+          "Munitorum-Issue Mess Kit",
+          "Blanket",
+          "Grooming Kit",
+          "2x Ration Pack",
+        ]
+      },
+      {
+        name: "Heretek",
+        description: "Students of the Adeptus Mechanicus that circumvent their strictures are known as Hereteks. These fallen Tech-Priests imbue machines with daemonic energies and dabble in other blasphemous lore in their craving for debased knowledge and power.",
+        faction: "Chaos",
+        tier: 3,
+        cost: 44,
+        bonuses: {
+          attributes: [
+            {
+              name: "Intellect",
+              value: "3",
+            }
+          ],
+          skills: [
+            {
+              name: "Scholar",
+              value: 1,
+            },
+            {
+              name: "Tech",
+              value: 3,
+            },
+          ],
+          keywords: ["IMPERIUM", "ADEPTUS MECHANICUS", "CULT MECHANICUS", "[FORGE WORLD]", "DARK MECHANICUS"],
+        },
+        abilities: [
+          {
+            name: "Rite of Repair",
+            description: "You receive +Double Rank to Tech (Int) Tests to repair damaged machinery. All Tech (Int) Tests you make take half the standard time."
+          },
+          {
+            name: "Corruption",
+            description: "You gain 1d3 x3 corruption.",
+          }
+        ],
+        influence: 2,
+        wargear: [
+          "Omnissian Axe",
+          "Laspistol",
+          "One Mechadendrite",
+          "Any 2 Augmetics",
+          "Combi-Tool",
+          "Light Power Armour",
+          "Omnissian Sigil (Symbol of Authority)"
         ]
       },
     ]

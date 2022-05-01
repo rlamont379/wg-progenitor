@@ -8,14 +8,12 @@ export interface Hero {
   name: string;
   tier: number;
   rank: number;
-  speciesXp: number;
-  archetypeXp: number;
   statXp: number;
+  tierXp: number;
   earnedXp: number;
-  totalXp: number;
   species: Species;
   faction?: Faction;
-  archetype?: Archetype;
+  archetype: Archetype;
   keywords?: string[];
   background?: string;
   languages?: string[];

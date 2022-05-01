@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Species } from './species';
+import { Archetype } from 'src/app/shared/models/archetype';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -8,12 +8,12 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class SpeciesService {
+export class ArchetypeService {
   private log(message: string) {
-    this.messageService.add(`SpeciesService: ${message}`);
+    this.messageService.add(`ArchetypeService: ${message}`);
   }
 
-  private speciesUrl = 'api/species'; //URL to web api (address of species resource on server)
+  private archetypeUrl = 'api/archetypes'; //URL to web api (address of archetype resource on server)
 
   /**
    * Handle Http operation that failed.
@@ -40,12 +40,12 @@ export class SpeciesService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  /** GET species from the server */
-  getSpecies(): Observable<Species[]> {
-    return this.http.get<Species[]>(this.speciesUrl)
+  /** GET archetypes from the server */
+  getArchetypes(): Observable<Archetype[]> {
+    return this.http.get<Archetype[]>(this.archetypeUrl)
       .pipe(
         tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError<Species[]>('getSpecies', []))
+        catchError(this.handleError<Archetype[]>('getArchetype', []))
       );
   }
 

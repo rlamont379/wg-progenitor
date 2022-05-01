@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../../../../hero';
+import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../../../../hero.service';
+import { HeroService } from 'src/app/shared/services/hero.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -24,12 +24,5 @@ export class HeroBuilderComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
-  }
-
-  createHero(): void {
-    this.heroService.addHero({ name: "Janys Dorana" } as Hero)
-      .subscribe(hero => {
-        this.heroes.push(hero);
-      });
   }
 }

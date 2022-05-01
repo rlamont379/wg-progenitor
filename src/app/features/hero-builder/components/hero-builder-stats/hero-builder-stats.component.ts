@@ -11,5 +11,4 @@ export class HeroBuilderStatsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

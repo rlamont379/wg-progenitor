@@ -1,12 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../../../../hero';
+import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../../../../hero.service';
-import { Species } from '../../../../species';
-import { SpeciesService } from '../../../../species.service';
+import { HeroService } from 'src/app/shared/services/hero.service';
+import { Species } from 'src/app/shared/models/species';
+import { SpeciesService } from 'src/app/shared/services/species.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
 
 @Component({
   selector: 'app-hero-builder-species',
@@ -48,11 +49,22 @@ export class HeroBuilderSpeciesComponent implements OnInit {
       this.heroService.updateHero(this.hero)
         .subscribe(hero => this.hero = hero);
       this.router.navigate(['../faction'], { relativeTo: this.route });
-      this.openSaveSnackBar();
+      this.openCustomSnackBar();
+      console.log(this.hero);
     }
   }
 
   openSaveSnackBar(): void {
     this.snackBar.open("Saved Species", "OK", {duration: 4000});
+  }
+
+  openCustomSnackBar(): void {
+    this.snackBar.openFromComponent(IconSnackBarComponent, {
+      data: {
+        message: "Saved Species",
+        icon: "published_with_changes",
+      },
+      duration: 2000
+    })
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Archetype } from './archetype';
+import { Faction } from 'src/app/shared/models/faction';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -8,12 +8,12 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ArchetypeService {
+export class FactionService {
   private log(message: string) {
-    this.messageService.add(`ArchetypeService: ${message}`);
+    this.messageService.add(`FactionService: ${message}`);
   }
 
-  private archetypeUrl = 'api/archetypes'; //URL to web api (address of archetype resource on server)
+  private factionUrl = 'api/factions'; //URL to web api (address of faction resource on server)
 
   /**
    * Handle Http operation that failed.
@@ -40,12 +40,12 @@ export class ArchetypeService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  /** GET archetypes from the server */
-  getArchetypes(): Observable<Archetype[]> {
-    return this.http.get<Archetype[]>(this.archetypeUrl)
+  /** GET factions from the server */
+  getFactions(): Observable<Faction[]> {
+    return this.http.get<Faction[]>(this.factionUrl)
       .pipe(
         tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError<Archetype[]>('getArchetype', []))
+        catchError(this.handleError<Faction[]>('getFaction', []))
       );
   }
 

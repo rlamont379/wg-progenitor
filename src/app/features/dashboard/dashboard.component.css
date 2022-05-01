@@ -1,0 +1,71 @@
+/* DashboardComponent's private CSS styles */
+
+h2 {
+  margin-left: 20px;
+}
+
+.heroes-menu {
+  justify-content: space-between;
+  text-align: center;
+}
+
+a {
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: auto;
+  height: 100%;
+  min-width: 180px;
+  margin: .5rem auto;
+  box-sizing: content-box;
+
+  /* flexbox */
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.hero-create-button {
+  height: 141px;
+  width: 141px;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.hero-create-button mat-icon {
+  height: 72px;
+  width: 72px;
+  font-size: 72px;
+}
+
+a:hover {
+  background-color: #000000;
+}
+
+button:hover {
+  background-color: #000000;
+}
+
+.mat-raised-button {
+  margin: 20px;
+}
+
+.mat-divider {
+  background-color: #ffffff
+}
+
+@media (min-width: 600px) {
+  a {
+    width: auto;
+    box-sizing: content-box;
+    min-width: 200px;
+  }
+  .heroes-menu {
+    text-align: left;
+  }
+}

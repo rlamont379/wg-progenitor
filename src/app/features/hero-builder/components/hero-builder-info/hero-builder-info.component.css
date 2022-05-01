@@ -1,0 +1,14 @@
+.info-button {
+  color: #a9a9a9;
+  margin-left: 5px;
+  font-size: 22px;
+}
+
+.save-button {
+  float: right;
+  margin-top: 40px;
+}
+
+.save-button:hover {
+  background-color: #000000;
+}

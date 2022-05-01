@@ -1,0 +1,18 @@
+<h2>Your Characters</h2>
+<div *ngIf="heroes" class="heroes-menu">
+  <a mat-raised-button color="primary" *ngFor="let hero of heroes" routerLink="/characters/{{hero.id}}/builder/info">
+    <div class="hero-select-name">
+      {{hero.name}}
+    </div>
+    <mat-divider></mat-divider>
+    <div *ngIf="hero.archetype" class="hero-select-archetype">
+      {{hero.archetype.name ? hero.archetype.name : "No Archetype"}}
+    </div>
+    <div *ngIf="hero">
+      Tier {{hero.tier}} | Rank {{hero.rank}} | {{hero.tierXp + hero.earnedXp}} XP
+    </div>
+  </a>
+  <button mat-raised-button color="primary" (click)="createHero()" class="hero-create-button">
+    <mat-icon>person_add</mat-icon>
+  </button>
+</div>

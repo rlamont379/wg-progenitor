@@ -16,21 +16,21 @@
         <mat-option [value]="3">Tier 3</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-icon style="color:grey">info_outline</mat-icon>
+    <mat-icon class="info-button" matTooltip="Your tier is the power level of your group and determines your starting XP." matTooltipPosition="right">info_outline</mat-icon>
   </div>
   <div class="row">
     <mat-form-field appearance="outline">
       <mat-label>Rank</mat-label>
       <input matInput type="number" placeholder="Rank" [(ngModel)]="hero.rank">
     </mat-form-field>
-    <mat-icon style="color:grey">info_outline</mat-icon>
+    <mat-icon class="info-button" matTooltip="Your Rank is a measure of your aptitude in your Tier. Some of your abilities and Talents may be modified by your Rank. Unless the GM says otherwise, you start at Rank 1." matTooltipPosition="right">info_outline</mat-icon>
   </div>
   <div class="row">
-    <mat-form-field hintLabel="XP earned by playing the game." appearance="outline">
+    <mat-form-field appearance="outline">
       <mat-label>Earned Experience Points (XP)</mat-label>
       <input matInput type="number" placeholder="XP" [(ngModel)]="hero.earnedXp">
     </mat-form-field>
-    <mat-icon style="color:grey">info_outline</mat-icon>
-    <button mat-raised-button color="primary" style="float: right; margin-top: 40px;" (click)="updateHero()">Save</button>
+    <mat-icon class="info-button" matTooltip="XP earned by playing the game. Given by the GM." matTooltipPosition="right">info_outline</mat-icon>
+    <button mat-raised-button color="primary" (click)="updateHero()" class="save-button">Save</button>
   </div>
 </mat-card>

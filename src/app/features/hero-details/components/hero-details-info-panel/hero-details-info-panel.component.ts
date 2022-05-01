@@ -1,15 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../../../../hero';
+import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../../../../hero.service';
+import { HeroService } from 'src/app/shared/services/hero.service';
 
 @Component({
-  selector: 'app-hero-info-panel',
-  templateUrl: './hero-info-panel.component.html',
-  styleUrls: ['./hero-info-panel.component.css']
+  selector: 'app-hero-details-info-panel',
+  templateUrl: './hero-details-info-panel.component.html',
+  styleUrls: ['./hero-details-info-panel.component.css']
 })
-export class HeroInfoPanelComponent implements OnInit {
+export class HeroDetailsInfoPanelComponent implements OnInit {
   @Input() hero?: Hero;
 
   constructor(

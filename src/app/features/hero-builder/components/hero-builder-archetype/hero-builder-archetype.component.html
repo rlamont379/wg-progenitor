@@ -34,7 +34,7 @@
           <strong>Keywords</strong> - {{archetype.bonuses.keywords.join(', ')}}
         </div>
         <div *ngIf="archetype.bonuses.influence">
-          <strong>Influence Bonus</strong>: +{{archetype.bonuses.influence}}
+          <strong>Influence Bonus</strong>: {{archetype.bonuses.influence > 0 ? "+" : ""}}{{archetype.bonuses.influence}}
         </div>
       </div>
       <div *ngIf="archetype.abilities" class="character-archetype-abilities">
@@ -51,7 +51,7 @@
           {{archetype.wargear.join(', ')}}
         </div>
       </div>
-      <button mat-raised-button color="primary" style="float: right" (click)="updateHeroArchetype(archetype)">Select Species</button>
+      <button mat-raised-button color="primary" (click)="updateHeroArchetype(archetype)" class="save-button">Select Archetype</button>
     </mat-expansion-panel>
   </mat-accordion>
 </mat-card>

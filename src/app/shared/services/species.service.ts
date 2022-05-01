@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Faction } from './faction';
+import { Species } from 'src/app/shared/models/species';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -8,12 +8,12 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class FactionService {
+export class SpeciesService {
   private log(message: string) {
-    this.messageService.add(`FactionService: ${message}`);
+    this.messageService.add(`SpeciesService: ${message}`);
   }
 
-  private factionUrl = 'api/factions'; //URL to web api (address of faction resource on server)
+  private speciesUrl = 'api/species'; //URL to web api (address of species resource on server)
 
   /**
    * Handle Http operation that failed.
@@ -40,12 +40,12 @@ export class FactionService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  /** GET factions from the server */
-  getFactions(): Observable<Faction[]> {
-    return this.http.get<Faction[]>(this.factionUrl)
+  /** GET species from the server */
+  getSpecies(): Observable<Species[]> {
+    return this.http.get<Species[]>(this.speciesUrl)
       .pipe(
         tap(_ => this.log('fetched heroes')),
-        catchError(this.handleError<Faction[]>('getFaction', []))
+        catchError(this.handleError<Species[]>('getSpecies', []))
       );
   }
 

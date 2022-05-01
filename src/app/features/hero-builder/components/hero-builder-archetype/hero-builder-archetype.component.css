@@ -2,3 +2,12 @@
   display: inline;
   margin-right: 10px;
 }
+
+.save-button {
+  float: right;
+  margin-top: 10px;
+}
+
+.save-button:hover {
+  background-color: #000000;
+}

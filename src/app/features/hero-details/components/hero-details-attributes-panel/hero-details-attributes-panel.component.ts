@@ -1,16 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../../../../hero';
+import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../../../../hero.service';
+import { HeroService } from 'src/app/shared/services/hero.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-hero-attributes-panel',
-  templateUrl: './hero-attributes-panel.component.html',
-  styleUrls: ['./hero-attributes-panel.component.css']
+  selector: 'app-hero-details-attributes-panel',
+  templateUrl: './hero-details-attributes-panel.component.html',
+  styleUrls: ['./hero-details-attributes-panel.component.css']
 })
-export class HeroAttributesPanelComponent implements OnInit {
+export class HeroDetailsAttributesPanelComponent implements OnInit {
   @Input() hero?: Hero;
   displayedColumns = ['name', 'rating', 'bonus', 'total'];
   ATTR_DATA: Attribute[] = [];

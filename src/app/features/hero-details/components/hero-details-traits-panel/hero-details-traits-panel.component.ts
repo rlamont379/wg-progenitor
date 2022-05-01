@@ -1,16 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../../../../hero';
+import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../../../../hero.service';
+import { HeroService } from 'src/app/shared/services/hero.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-hero-traits-panel',
-  templateUrl: './hero-traits-panel.component.html',
-  styleUrls: ['./hero-traits-panel.component.css']
+  selector: 'app-hero-details-traits-panel',
+  templateUrl: './hero-details-traits-panel.component.html',
+  styleUrls: ['./hero-details-traits-panel.component.css']
 })
-export class HeroTraitsPanelComponent implements OnInit {
+export class HeroDetailsTraitsPanelComponent implements OnInit {
   @Input() hero?: Hero;
   displayedColumns = ['name', 'rating', 'modifier'];
   TRAIT_DATA: Trait[] = [];

@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../../../../hero';
+import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { HeroService } from '../../../../hero.service';
-import { Archetype } from '../../../../archetype';
-import { ArchetypeService } from '../../../../archetype.service';
-import { Faction } from '../../../../faction';
+import { HeroService } from 'src/app/shared/services/hero.service';
+import { Archetype } from 'src/app/shared/models/archetype';
+import { ArchetypeService } from 'src/app/shared/services/archetype.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
 
 
 @Component({
@@ -64,11 +64,21 @@ export class HeroBuilderArchetypeComponent implements OnInit {
       this.heroService.updateHero(this.hero)
         .subscribe(hero => this.hero = hero);
       this.router.navigate(['../stats'], { relativeTo: this.route });
-      this.openSaveSnackBar();
+      this.openCustomSnackBar();
     }
   }
 
   openSaveSnackBar(): void {
     this.snackBar.open("Saved Archetype", "OK", {duration: 4000});
+  }
+
+  openCustomSnackBar(): void {
+    this.snackBar.openFromComponent(IconSnackBarComponent, {
+      data: {
+        message: "Saved Archetype",
+        icon: "published_with_changes",
+      },
+      duration: 2000
+    })
   }
 }

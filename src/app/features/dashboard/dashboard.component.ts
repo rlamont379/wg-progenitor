@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero } from 'src/app/shared/models/hero';
+import { HeroService } from 'src/app/shared/services/hero.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   }
 
   createHero(): void {
-    this.heroService.addHero({ name: "Janys Dorana" } as Hero)
+    this.heroService.addHero({ name: "New Character", tier: 1, rank: 1, earnedXp: 0, tierXp: 100, species: {cost: 0}, archetype: {cost: 0} } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
       });

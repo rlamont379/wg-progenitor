@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroDetailComponent } from './features/hero-details/views/hero-detail/hero-detail.component';
-import { HeroBuilderComponent } from './features/hero-builder/views/hero-builder/hero-builder.component';
-import { HeroBuilderInfoComponent } from './features/hero-builder/components/hero-builder-info/hero-builder-info.component';
-import { HeroBuilderSpeciesComponent } from './features/hero-builder/components/hero-builder-species/hero-builder-species.component';
-import { HeroBuilderArchetypeComponent } from './features/hero-builder/components/hero-builder-archetype/hero-builder-archetype.component';
-import { HeroBuilderStatsComponent } from './features/hero-builder/components/hero-builder-stats/hero-builder-stats.component';
-import { HeroBuilderFactionComponent } from './features/hero-builder/components/hero-builder-faction/hero-builder-faction.component';
+import { HeroesComponent } from 'src/app/heroes/heroes.component';
+import { DashboardComponent } from 'src/app/features/dashboard/dashboard.component';
+import { HeroDetailComponent } from 'src/app/features/hero-details/views/hero-detail/hero-detail.component';
+import { HeroBuilderComponent } from 'src/app/features/hero-builder/views/hero-builder/hero-builder.component';
+import { HeroBuilderInfoComponent } from 'src/app/features/hero-builder/components/hero-builder-info/hero-builder-info.component';
+import { HeroBuilderSpeciesComponent } from 'src/app/features/hero-builder/components/hero-builder-species/hero-builder-species.component';
+import { HeroBuilderArchetypeComponent } from 'src/app/features/hero-builder/components/hero-builder-archetype/hero-builder-archetype.component';
+import { HeroBuilderStatsComponent } from 'src/app/features/hero-builder/components/hero-builder-stats/hero-builder-stats.component';
+import { HeroBuilderFactionComponent } from 'src/app/features/hero-builder/components/hero-builder-faction/hero-builder-faction.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
