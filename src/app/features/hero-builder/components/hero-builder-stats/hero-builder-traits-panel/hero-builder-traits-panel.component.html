@@ -1,0 +1,25 @@
+<div class="stat-table-container">
+  <h3 class="stat-table-title">Traits</h3>
+
+  <mat-table #table [dataSource]="traitSource">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <!-- <mat-header-cell *matHeaderCellDef> Trait </mat-header-cell> -->
+      <mat-cell *matCellDef="let trait"> {{trait.name}} </mat-cell>
+    </ng-container>
+  
+    <!-- Rating Column -->
+    <ng-container matColumnDef="rating">
+      <!-- <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell> -->
+      <mat-cell *matCellDef="let trait"> {{trait.rating}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="modifier">
+      <mat-cell *matCellDef="let trait"></mat-cell>
+    </ng-container>
+
+    <!-- <mat-header-row *matHeaderRowDef="displayedColumns" [style.minHeight.px]="32"></mat-header-row> -->
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [style.minHeight.px]="32"></mat-row>
+  </mat-table>
+</div>

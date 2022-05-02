@@ -1,22 +1,32 @@
 <div class="stat-table-container">
-  <h3 class="stat-table-title">Attributes</h3>
+  <h3 class="stat-table-title">Skills</h3>
 
-  <mat-table #table [dataSource]="attrSource">
+  <mat-table #table [dataSource]="skillSource">
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Attribute </mat-header-cell>
-      <mat-cell *matCellDef="let attribute"> {{attribute.name}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef class="mat-skill-header">Skill</mat-header-cell>
+      <mat-cell *matCellDef="let skill">
+        {{skill.name}}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Attribute Column -->
+    <ng-container matColumnDef="attribute">
+      <mat-header-cell *matHeaderCellDef>Attribute</mat-header-cell>
+      <mat-cell *matCellDef="let skill">
+        {{skill.attribute}}
+      </mat-cell>
     </ng-container>
 
     <!-- Rating Column -->
     <ng-container matColumnDef="rating">
-      <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
-      <mat-cell *matCellDef="let attribute">
+      <mat-header-cell *matHeaderCellDef>Rating</mat-header-cell>
+      <mat-cell *matCellDef="let skill">
         <button mat-icon-button>
           <mat-icon class="lower-skill-button-usable">remove_circle</mat-icon>
         </button>
-        <!-- {{attribute.rating}} -->8
+        <!-- {{skill.rating}} -->8
         <button mat-icon-button>
           <mat-icon class="raise-skill-button-usable">add_circle</mat-icon>
         </button>
@@ -25,8 +35,8 @@
 
     <!-- Total Column -->
     <ng-container matColumnDef="total">
-      <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
-      <mat-cell *matCellDef="let attribute"> {{attribute.total}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Total</mat-header-cell>
+      <mat-cell *matCellDef="let skill">{{skill.total}}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns" [style.minHeight.px]="32"></mat-header-row>

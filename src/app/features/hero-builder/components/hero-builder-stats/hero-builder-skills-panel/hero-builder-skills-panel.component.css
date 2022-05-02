@@ -12,6 +12,10 @@
   border-top-right-radius: 5px;
 }
 
+.mat-column-attribute {
+  justify-content: center;
+}
+
 .mat-column-rating {
   justify-content: center;
 }
@@ -26,12 +30,4 @@
 
 .raise-skill-button-usable {
   color: #3F51B5;
-}
-
-.lower-skill-button-usable:hover {
-  color: black;
-}
-
-.raise-skill-button-usable:hover {
-  color: black;
 }
