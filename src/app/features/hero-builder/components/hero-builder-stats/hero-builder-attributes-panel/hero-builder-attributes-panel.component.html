@@ -11,12 +11,12 @@
 
     <!-- Rating Column -->
     <ng-container matColumnDef="rating">
-      <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Rating</mat-header-cell>
       <mat-cell *matCellDef="let attribute">
         <button mat-icon-button>
           <mat-icon class="lower-skill-button-usable">remove_circle</mat-icon>
         </button>
-        <!-- {{attribute.rating}} -->8
+          {{attribute.rating}}
         <button mat-icon-button>
           <mat-icon class="raise-skill-button-usable">add_circle</mat-icon>
         </button>
@@ -25,8 +25,8 @@
 
     <!-- Total Column -->
     <ng-container matColumnDef="total">
-      <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
-      <mat-cell *matCellDef="let attribute"> {{attribute.total}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Total</mat-header-cell>
+      <mat-cell *matCellDef="let attribute">{{attribute.total}}</mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns" [style.minHeight.px]="32"></mat-header-row>

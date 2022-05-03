@@ -9,14 +9,10 @@
       <mat-cell *matCellDef="let trait"> {{trait.name}} </mat-cell>
     </ng-container>
   
-    <!-- Rating Column -->
+    <!-- Levels Column -->
     <ng-container matColumnDef="rating">
-      <!-- <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell> -->
+      <!-- <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell> -->
       <mat-cell *matCellDef="let trait"> {{trait.rating}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="modifier">
-      <mat-cell *matCellDef="let trait"></mat-cell>
     </ng-container>
 
     <!-- <mat-header-row *matHeaderRowDef="displayedColumns" [style.minHeight.px]="32"></mat-header-row> -->

@@ -3,7 +3,6 @@ import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService } from 'src/app/shared/services/hero.service';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-hero-builder',
@@ -11,18 +10,21 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./hero-builder.component.css']
 })
 export class HeroBuilderComponent implements OnInit {
-  heroes: Hero[] = [];
+  @Input() hero?: Hero;
 
-  
-
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private heroService: HeroService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getHero();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+  getHero(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.heroService.getHero(id)
+      .subscribe(hero => this.hero = hero);
   }
 }

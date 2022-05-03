@@ -26,8 +26,4 @@ export class HeroDetailsInfoPanelComponent implements OnInit {
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
   }
-
-  debug(): void {
-    console.log(this.hero);
-  }
 }

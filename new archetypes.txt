@@ -352,7 +352,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         species: "Aeldari",
         name: "Asuryani",
-        description: "The Asuryani, also called Craftworld Aeldari as they were named before the fall of their lost realm, or the Eldar as they were long known to outsiders, are a kindred of the Aeldari race who now live on vast, city-like starships called craftworlds. Asuryani Outcasts, known as Anhrathe in the Aeldari Lexicon, are those rare members of the Aeldari species who have taken up the Path of the Outcast and left their home craftworld to wander the galaxy when they find the rigid Asuryani lifestyle suffocating. Some may even leave the Asuryani Path altogether.",
+        description: "The Asuryani, also called Craftworld Aeldari as they were named before the fall of their lost realm, or the Eldar as they were long known to outsiders, are a kindred of the Aeldari race who now live on vast, city-like starships called craftworlds. Asuryani Outcasts, known as Anhrathe in the Aeldari Lexicon, are those rare members of the Aedlari species who have taken up the Path of the Outcast and left their home craftworld to wander the galaxy when they find the rigid Asuryani lifestyle suffocating. Some may even leave the Asuryani Path altogether.",
         keywords: [
           "AELDARI",
         ],
@@ -371,9 +371,9 @@ export class InMemoryDataService implements InMemoryDbService {
           "[CLAN]",
         ],
         archetypes: [
-          "Boy",
+          "Ork Boy",
           "Kommando",
-          "Nob",
+          "Ork Nob",
         ]
       },
       {
@@ -1286,7 +1286,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         name: "Ranger",
-        description: "Embracing the path of the Outcast, you stealthily travel the galaxy in search of new experiences, eliminating threats to your Craftworld from afar.",
+        description: "Embracing the path of the Outcast, you stealthily travel the galaxy in search of new experiences, eliminating threats to your Craftworld from afar."
         faction: "Asuryani",
         tier: 2,
         cost: 34,
@@ -1333,7 +1333,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         name: "Warlock",
-        description: "Harnessing eldritch power and aspect warrior training, you are an aggressive battle Psyker driven to war.",
+        description: "Harnessing eldritch power and aspect warrior training, you are an aggressive battle Psyker driven to war."
         faction: "Asuryani",
         tier: 3,
         cost: 34,
@@ -1354,7 +1354,7 @@ export class InMemoryDataService implements InMemoryDbService {
               value: 2,
             },
           ],
-          keywords: ["ASURYANI", "PSYKER", "[CRAFTWORLD]"],
+          keywords: ["ASURYANI", "PSYKER", [CRAFTWORLD]],
           influence: 2,
         },
         abilities: [
@@ -1376,8 +1376,8 @@ export class InMemoryDataService implements InMemoryDbService {
         ]
       },
       {
-        name: "Boy",
-        description: "A hulking, brutish creature who lives only to fight. You are a loutish, anarchic bruiser born for battle.",
+        name: "Ork Boy",
+        description: "A hulking, brutish creature who lives only to fight. You are a loutish, anarchic bruiser born for battle."
         faction: "Ork",
         tier: 1,
         cost: 26,
@@ -1402,7 +1402,7 @@ export class InMemoryDataService implements InMemoryDbService {
         abilities: [
           {
             name: "Get Stuck In",
-            description: "You gain +Rank bonus dice to melee attacks for every ally engaged with the same target as you.",
+            description: "You gain +Rank bonus dice to melee attacks for every ally engaged with the same target as you."
           },
         ],
         wargear: [
@@ -1414,7 +1414,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         name: "Kommando",
-        description: "An extraordinary example of your Species, you employ cunning, stealth, and self-discipline to accomplish acts of underhanded brutality.",
+        description: "An extraordinary example of your Species, you employ cunning, stealth, and self-discipline to accomplish acts of underhanded brutality."
         faction: "Ork",
         tier: 2,
         cost: 54,
@@ -1463,8 +1463,8 @@ export class InMemoryDataService implements InMemoryDbService {
         ]
       },
       {
-        name: "Nob",
-        description: "Larger and stronger than most Orks, your uncanny size and brawn earn a natural place violently ruling over other Boyz.",
+        name: "Ork Nob",
+        description: "Larger and stronger than most Orks, your uncanny size and brawn earn a natural place violently ruling over other Boyz."
         faction: "Ork",
         tier: 3,
         cost: 56,
@@ -1503,7 +1503,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         name: "Space Marine Scout",
-        description: "Genetically enhanced beyond Human limits, you are an initiate warrior of the Adeptus Astartes deployed to make swify, stealthy strikes.",
+        description: "Genetically enhanced beyond Human limits, you are an initiate warrior of the Adeptus Astartes deployed to make swify, stealthy strikes."
         faction: "Adeptus Astartes",
         tier: 2,
         cost: 170,
@@ -1574,7 +1574,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         name: "Tactical Space Marine",
-        description: "A genetically enhanced super soldier beyond a mortal Human in every way, clad in armour and deployed to destroy the Imperium's enemies.",
+        description: "A genetically enhanced super soldier beyond a mortal Human in every way, clad in armour and deployed to destroy the Imperium's enemies."
         faction: "Adeptus Astartes",
         tier: 3,
         cost: 277,
@@ -1625,7 +1625,7 @@ export class InMemoryDataService implements InMemoryDbService {
             {
               name: "Scholar",
               value: 1,
-            },
+            }
             {
               name: "Stealth",
               value: 3,
@@ -1643,7 +1643,7 @@ export class InMemoryDataService implements InMemoryDbService {
         abilities: [
           {
             name: "Tactical Versatility",
-            description: "Your training has prepared you for any circumstance. When you make a Critical Hit you may roll twice on the Critical Hit Table and choose either result.",
+            description: "Your training has prepared you for any circumstance. When you make a Critical Hit you may roll twice on the Critical Hit Table and choose either result."
           },
         ],
         influence: 2,
@@ -1658,7 +1658,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         name: "Chaos Space Marine",
-        description: "Nine Legions of the Emperor's Space Marines revolted during the Horus Heresy, corrupted by the Ruinous Powers. Though they retain their powerful Wargear and implants, the malign influence of the Warp mutates them to even greater power.",
+        description: ""
         faction: "Heretic Astartes",
         tier: 3,
         cost: 252,
@@ -1709,7 +1709,7 @@ export class InMemoryDataService implements InMemoryDbService {
             {
               name: "Scholar",
               value: 1,
-            },
+            }
             {
               name: "Stealth",
               value: 3,
@@ -1727,7 +1727,7 @@ export class InMemoryDataService implements InMemoryDbService {
         abilities: [
           {
             name: "Tactical Versatility",
-            description: "Your training has prepared you for any circumstance. When you make a Critical Hit you may roll twice on the Critical Hit Table and choose either result.",
+            description: "Your training has prepared you for any circumstance. When you make a Critical Hit you may roll twice on the Critical Hit Table and choose either result."
           },
           {
             name: "Corruption",

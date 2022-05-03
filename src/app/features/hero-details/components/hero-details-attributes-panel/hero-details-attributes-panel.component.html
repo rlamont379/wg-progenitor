@@ -9,21 +9,21 @@
       <mat-cell *matCellDef="let attribute"> {{attribute.name}} </mat-cell>
     </ng-container>
   
-    <!-- Rating Column -->
+    <!-- Levels Column -->
     <ng-container matColumnDef="rating">
-      <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
       <mat-cell *matCellDef="let attribute"> {{attribute.rating}} </mat-cell>
     </ng-container>
   
-    <!-- Bonus Column -->
+    <!-- Levels Column -->
     <ng-container matColumnDef="bonus">
-      <mat-header-cell *matHeaderCellDef> Bonus </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
       <mat-cell *matCellDef="let attribute"> {{attribute.bonus}} </mat-cell>
     </ng-container>
   
-    <!-- Total Column -->
+    <!-- Levels Column -->
     <ng-container matColumnDef="total">
-      <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
       <mat-cell *matCellDef="let attribute"> {{attribute.total}} </mat-cell>
     </ng-container>
   
@@ -39,50 +39,50 @@
   </thead>
   <tr>
     <th style="text-align: left">Attribute</th>
-    <th>Rating</th>
-    <th>Bonus</th>
-    <th>Total</th>
+    <th>Levels</th>
+    <th>Levels</th>
+    <th>Levels</th>
   </tr>
   <tr>
     <th style="text-align: left">Strength</th>
-    <td *ngIf="hero">{{hero.strRating}}</td>
-    <td *ngIf="hero">{{hero.strBonus}}</td>
-    <td *ngIf="hero">{{hero.strTotal}}</td>
+    <td *ngIf="hero">{{hero.strLevels}}</td>
+    <td *ngIf="hero">{{hero.strLevels}}</td>
+    <td *ngIf="hero">{{hero.strLevels}}</td>
   </tr>
   <tr>
     <th style="text-align: left">Toughness</th>
-    <td *ngIf="hero">{{hero.toughRating}}</td>
-    <td *ngIf="hero">{{hero.toughBonus}}</td>
-    <td *ngIf="hero">{{hero.toughTotal}}</td>
+    <td *ngIf="hero">{{hero.toughLevels}}</td>
+    <td *ngIf="hero">{{hero.toughLevels}}</td>
+    <td *ngIf="hero">{{hero.toughLevels}}</td>
   </tr>
   <tr>
     <th style="text-align: left">Agility</th>
-    <td *ngIf="hero">{{hero.agiRating}}</td>
-    <td *ngIf="hero">{{hero.agiBonus}}</td>
-    <td *ngIf="hero">{{hero.agiTotal}}</td>
+    <td *ngIf="hero">{{hero.agiLevels}}</td>
+    <td *ngIf="hero">{{hero.agiLevels}}</td>
+    <td *ngIf="hero">{{hero.agiLevels}}</td>
   </tr>
   <tr>
     <th style="text-align: left">Initiative</th>
-    <td *ngIf="hero">{{hero.initRating}}</td>
-    <td *ngIf="hero">{{hero.initBonus}}</td>
-    <td *ngIf="hero">{{hero.initTotal}}</td>
+    <td *ngIf="hero">{{hero.initLevels}}</td>
+    <td *ngIf="hero">{{hero.initLevels}}</td>
+    <td *ngIf="hero">{{hero.initLevels}}</td>
   </tr>
   <tr>
     <th style="text-align: left">Willpower</th>
-    <td *ngIf="hero">{{hero.wilRating}}</td>
-    <td *ngIf="hero">{{hero.wilBonus}}</td>
-    <td *ngIf="hero">{{hero.wilTotal}}</td>
+    <td *ngIf="hero">{{hero.wilLevels}}</td>
+    <td *ngIf="hero">{{hero.wilLevels}}</td>
+    <td *ngIf="hero">{{hero.wilLevels}}</td>
   </tr>
   <tr>
     <th style="text-align: left">Intellect</th>
-    <td *ngIf="hero">{{hero.intRating}}</td>
-    <td *ngIf="hero">{{hero.intBonus}}</td>
-    <td *ngIf="hero">{{hero.intTotal}}</td>
+    <td *ngIf="hero">{{hero.intLevels}}</td>
+    <td *ngIf="hero">{{hero.intLevels}}</td>
+    <td *ngIf="hero">{{hero.intLevels}}</td>
   </tr>
   <tr>
     <th style="text-align: left">Fellowship</th>
-    <td *ngIf="hero">{{hero.felRating}}</td>
-    <td *ngIf="hero">{{hero.felBonus}}</td>
-    <td *ngIf="hero">{{hero.felTotal}}</td>
+    <td *ngIf="hero">{{hero.felLevels}}</td>
+    <td *ngIf="hero">{{hero.felLevels}}</td>
+    <td *ngIf="hero">{{hero.felLevels}}</td>
   </tr>
 </table>-->

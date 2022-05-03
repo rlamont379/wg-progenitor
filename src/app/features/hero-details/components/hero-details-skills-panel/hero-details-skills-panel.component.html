@@ -7,9 +7,9 @@
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef class="mat-skill-header"> Skill </mat-header-cell>
       <mat-cell *matCellDef="let skill">
-        <a mat-icon-button>
+        <button mat-icon-button>
           <mat-icon>casino</mat-icon>
-        </a>
+        </button>
         {{skill.name}}
       </mat-cell>
     </ng-container>
@@ -20,21 +20,21 @@
       <mat-cell *matCellDef="let skill"> {{skill.attribute}} </mat-cell>
     </ng-container>
 
-    <!-- Rating Column -->
+    <!-- Levels Column -->
     <ng-container matColumnDef="rating">
-      <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
       <mat-cell *matCellDef="let skill"> {{skill.rating}} </mat-cell>
     </ng-container>
   
-    <!-- Bonus Column -->
+    <!-- Levels Column -->
     <ng-container matColumnDef="bonus">
-      <mat-header-cell *matHeaderCellDef> Bonus </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
       <mat-cell *matCellDef="let skill"> {{skill.bonus}} </mat-cell>
     </ng-container>
   
-    <!-- Total Column -->
+    <!-- Levels Column -->
     <ng-container matColumnDef="total">
-      <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
       <mat-cell *matCellDef="let skill"> {{skill.total}} </mat-cell>
     </ng-container>
   

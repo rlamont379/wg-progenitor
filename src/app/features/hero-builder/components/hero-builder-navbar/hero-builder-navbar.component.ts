@@ -18,7 +18,7 @@ export class HeroBuilderNavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    setInterval(()=>{this.getHero();}, 250)
+    /*setInterval(()=>{*/this.getHero();/*}, 250)*/
   }
 
   getHero(): void {

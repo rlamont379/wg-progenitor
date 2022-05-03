@@ -50,7 +50,6 @@ export class HeroBuilderSpeciesComponent implements OnInit {
         .subscribe(hero => this.hero = hero);
       this.router.navigate(['../faction'], { relativeTo: this.route });
       this.openCustomSnackBar();
-      console.log(this.hero);
     }
   }
 

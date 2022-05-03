@@ -12,7 +12,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 })
 export class HeroBuilderTraitsPanelComponent implements OnInit {
   @Input() hero?: Hero;
-  displayedColumns = ['name', 'rating', 'modifier'];
+  displayedColumns = ['name', 'rating'];
   TRAIT_DATA: Trait[] = [];
   traitSource: any;
 
@@ -70,8 +70,8 @@ export class HeroBuilderTraitsPanelComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id)
+    const id = Number(this.route.parent?.snapshot.paramMap.get('id'));
+    this.heroService.getHero(1)
       .subscribe(hero => this.hero = hero);
   }
 }

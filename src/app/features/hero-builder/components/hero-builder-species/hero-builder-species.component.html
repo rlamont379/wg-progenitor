@@ -1,4 +1,4 @@
-<mat-card style="width: 750px;">
+<mat-card style="width: 768px">
   <mat-card-title>Species</mat-card-title>
   <mat-card-subtitle>Aliens, heretics, mutants - and worse.</mat-card-subtitle>
   <mat-accordion class="character-species-options">
@@ -17,7 +17,7 @@
       <p><strong>Speed</strong> - {{species.speed}}</p>
       <div *ngIf="species.bonuses">
         <hr>
-        <h3>Bonuses</h3>
+        <h3>Levelses</h3>
         <div *ngIf="species.bonuses.attributes">
           <strong>Attributes</strong> -
           <div *ngFor="let attribute of species.bonuses.attributes" class="character-species-bonus">
@@ -55,7 +55,7 @@
       </mat-expansion-panel-header>
       <p class="character-species-description-human" style="font-style: italic">The uncounted trillions of Humans are the most numerous and widespread Species in the galaxy. The fathomless multitudes are spread across a million worlds with endless variety in mind and body. Little of the pure Human form has changed in the past forty Millennia, united as most Humans are in the God-Emperor's vast Imperium.</p>
       <hr>
-      <h3 class="character-species-bonus-human">Bonuses:</h3>
+      <h3 class="character-species-bonus-human">Levelses:</h3>
       <p>Attributes: None <mat-icon></mat-icon></p>
       <p>Skills: None</p>
       <p>Speed: 6</p>

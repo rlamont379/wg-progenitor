@@ -122,8 +122,8 @@ export class HeroBuilderSkillsPanelComponent implements OnInit {
   }
 
   getHero(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id)
+    const id = Number(this.route.parent?.snapshot.paramMap.get('id'));
+    this.heroService.getHero(1)
       .subscribe(hero => this.hero = hero);
   }
 }

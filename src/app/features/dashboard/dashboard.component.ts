@@ -22,7 +22,43 @@ export class DashboardComponent implements OnInit {
   }
 
   createHero(): void {
-    this.heroService.addHero({ name: "New Character", tier: 1, rank: 1, earnedXp: 0, tierXp: 100, species: {cost: 0}, archetype: {cost: 0} } as Hero)
+    this.heroService.addHero(
+      {
+        name: "New Character",
+        tier: 1,
+        rank: 1,
+        earnedXp: 0,
+        tierXp: 100,
+        species: {cost: 0},
+        archetype: {cost: 0},
+
+        strLevels: 0,
+        toughLevels: 0,
+        agiLevels: 0,
+        initLevels: 0,
+        wilLevels: 0,
+        intLevels: 0,
+        felLevels: 0,
+
+        skillAthletics: 0,
+        skillAwareness: 0,
+        skillBallistics: 0,
+        skillCunning: 0,
+        skillDeception: 0,
+        skillInsight: 0,
+        skillIntimidation: 0,
+        skillInvestigation: 0,
+        skillLeadership: 0,
+        skillMedicae: 0,
+        skillPersuasion: 0,
+        skillPilot: 0,
+        skillPsychic: 0,
+        skillScholar: 0,
+        skillStealth: 0,
+        skillSurvival: 0,
+        skillTech: 0,
+        skillWeapons: 0,
+      } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
       });
