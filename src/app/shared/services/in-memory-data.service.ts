@@ -1253,7 +1253,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "A space pirate, a self-imposed exile of your Species, you raid and fight for coin, and to experience the full spectrum of sensation and emotion.",
         faction: "Asuryani",
         tier: 1,
-        cost: 16,
+        cost: 6,
         bonuses: {
           attributes: [
             {
@@ -1289,7 +1289,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Embracing the path of the Outcast, you stealthily travel the galaxy in search of new experiences, eliminating threats to your Craftworld from afar.",
         faction: "Asuryani",
         tier: 2,
-        cost: 34,
+        cost: 24,
         bonuses: {
           attributes: [
             {
@@ -1336,7 +1336,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Harnessing eldritch power and aspect warrior training, you are an aggressive battle Psyker driven to war.",
         faction: "Asuryani",
         tier: 3,
-        cost: 34,
+        cost: 24,
         bonuses: {
           attributes: [
             {
@@ -1380,7 +1380,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "A hulking, brutish creature who lives only to fight. You are a loutish, anarchic bruiser born for battle.",
         faction: "Ork",
         tier: 1,
-        cost: 26,
+        cost: 6,
         bonuses: {
           attributes: [
             {
@@ -1417,7 +1417,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "An extraordinary example of your Species, you employ cunning, stealth, and self-discipline to accomplish acts of underhanded brutality.",
         faction: "Ork",
         tier: 2,
-        cost: 54,
+        cost: 34,
         bonuses: {
           attributes: [
             {
@@ -1467,7 +1467,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Larger and stronger than most Orks, your uncanny size and brawn earn a natural place violently ruling over other Boyz.",
         faction: "Ork",
         tier: 3,
-        cost: 56,
+        cost: 36,
         bonuses: {
           attributes: [
             {
@@ -1506,7 +1506,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Genetically enhanced beyond Human limits, you are an initiate warrior of the Adeptus Astartes deployed to make swify, stealthy strikes.",
         faction: "Adeptus Astartes",
         tier: 2,
-        cost: 170,
+        cost: 10,
         bonuses: {
           attributes: [
             {
@@ -1577,7 +1577,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "A genetically enhanced super soldier beyond a mortal Human in every way, clad in armour and deployed to destroy the Imperium's enemies.",
         faction: "Adeptus Astartes",
         tier: 3,
-        cost: 277,
+        cost: 92,
         bonuses: {
           attributes: [
             {
@@ -1661,7 +1661,7 @@ export class InMemoryDataService implements InMemoryDbService {
         description: "Nine Legions of the Emperor's Space Marines revolted during the Horus Heresy, corrupted by the Ruinous Powers. Though they retain their powerful Wargear and implants, the malign influence of the Warp mutates them to even greater power.",
         faction: "Heretic Astartes",
         tier: 3,
-        cost: 252,
+        cost: 92,
         bonuses: {
           attributes: [
             {

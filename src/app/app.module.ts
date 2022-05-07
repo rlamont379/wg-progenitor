@@ -36,10 +36,7 @@ import { HeroBuilderSpeciesComponent } from 'src/app/features/hero-builder/compo
 import { HeroBuilderArchetypeComponent } from 'src/app/features/hero-builder/components/hero-builder-archetype/hero-builder-archetype.component';
 import { HeroBuilderStatsComponent } from 'src/app/features/hero-builder/components/hero-builder-stats/hero-builder-stats.component';
 import { HeroBuilderFactionComponent } from 'src/app/features/hero-builder/components/hero-builder-faction/hero-builder-faction.component';
-import { HeroBuilderAttributesPanelComponent } from 'src/app/features/hero-builder/components/hero-builder-stats/hero-builder-attributes-panel/hero-builder-attributes-panel.component';
 import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
-import { HeroBuilderSkillsPanelComponent } from './features/hero-builder/components/hero-builder-stats/hero-builder-skills-panel/hero-builder-skills-panel.component';
-import { HeroBuilderTraitsPanelComponent } from './features/hero-builder/components/hero-builder-stats/hero-builder-traits-panel/hero-builder-traits-panel.component';
 
 @NgModule({
   declarations: [
@@ -60,10 +57,7 @@ import { HeroBuilderTraitsPanelComponent } from './features/hero-builder/compone
     HeroBuilderArchetypeComponent,
     HeroBuilderStatsComponent,
     HeroBuilderFactionComponent,
-    HeroBuilderAttributesPanelComponent,
     IconSnackBarComponent,
-    HeroBuilderSkillsPanelComponent,
-    HeroBuilderTraitsPanelComponent,
   ],
   imports: [
     BrowserModule,

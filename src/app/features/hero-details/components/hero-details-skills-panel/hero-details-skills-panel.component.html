@@ -7,9 +7,9 @@
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef class="mat-skill-header"> Skill </mat-header-cell>
       <mat-cell *matCellDef="let skill">
-        <button mat-icon-button>
+        <a mat-icon-button (click)="testClick()">
           <mat-icon>casino</mat-icon>
-        </button>
+        </a>
         {{skill.name}}
       </mat-cell>
     </ng-container>

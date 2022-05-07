@@ -27,7 +27,7 @@ export class HeroDetailsSkillsPanelComponent implements OnInit {
 
   ngDoCheck(): void {
     this.SKILL_DATA = [
-      { name: "Athletics",
+      /*{ name: "Athletics",
         attribute: "Strength",
         rating: this.hero?.skillAthletics as number,
         bonus: this.hero?.skillAthletics as number,
@@ -134,7 +134,7 @@ export class HeroDetailsSkillsPanelComponent implements OnInit {
         rating: this.hero?.skillWeapons as number,
         bonus: this.hero?.skillWeapons as number,
         total: this.hero?.skillWeapons as number,
-      },
+      },*/
     ]
     this.skillSource = new MatTableDataSource(this.SKILL_DATA)
   }
@@ -143,6 +143,10 @@ export class HeroDetailsSkillsPanelComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+  }
+
+  testClick(): void {
+    console.log("Click!");
   }
 }
 
