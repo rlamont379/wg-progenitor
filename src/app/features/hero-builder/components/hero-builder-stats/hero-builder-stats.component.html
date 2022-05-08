@@ -1,0 +1,119 @@
+<app-hero-builder-navbar></app-hero-builder-navbar>
+<mat-card style="width: 768px; margin-bottom: 100px">
+  <div class="row">
+    <div class="col-8" style="padding-bottom: 0px">
+      <mat-card-title>Stats</mat-card-title>
+      <mat-card-subtitle>Success is measured in blood; yours or your enemy's.</mat-card-subtitle>
+    </div>
+    <div class="col-3">
+      <button mat-raised-button color="primary" (click)="saveHeroStats()" class="save-button">Save</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5" style="display: table">
+      <div class="stat-table-container">
+        <h3 class="stat-table-title">Attributes</h3>
+      
+        <mat-table #table [dataSource]="attrSource">
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Attribute </mat-header-cell>
+            <mat-cell *matCellDef="let attribute" matTooltip={{attribute.description}} matTooltipPosition="left"> {{attribute.name}} </mat-cell>
+          </ng-container>
+      
+          <!-- Rating Column -->
+          <ng-container matColumnDef="rating">
+            <mat-header-cell *matHeaderCellDef>Rating</mat-header-cell>
+            <mat-cell *matCellDef="let attribute">
+              <a mat-icon-button color="accent" (click)="lowerAttr(attribute.name)" class="lower-stat-button">
+                <mat-icon>remove_circle</mat-icon>
+              </a>
+                {{attribute.rating}}
+              <a mat-icon-button color="primary" (click)="raiseAttr(attribute.name)" class="raise-stat-button">
+                <mat-icon>add_circle</mat-icon>
+              </a>
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Total Column 
+          <ng-container matColumnDef="total">
+            <mat-header-cell *matHeaderCellDef>Total</mat-header-cell>
+            <mat-cell *matCellDef="let attribute">{{attribute.total}}</mat-cell>
+          </ng-container> -->
+      
+          <mat-header-row *matHeaderRowDef="attrColumns" [style.minHeight.px]="32"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: attrColumns;" [style.minHeight.px]="28"></mat-row>
+        </mat-table>
+      </div>
+      <div class="stat-table-container">
+        <h3 class="stat-table-title">Traits</h3>
+      
+        <mat-table #table [dataSource]="traitSource">
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <!-- <mat-header-cell *matHeaderCellDef> Trait </mat-header-cell> -->
+            <mat-cell *matCellDef="let trait" matTooltip={{trait.description}} matTooltipPosition="left"> {{trait.name}} </mat-cell>
+          </ng-container>
+        
+          <!-- Rating Column -->
+          <ng-container matColumnDef="rating">
+            <!-- <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell> -->
+            <mat-cell *matCellDef="let trait" matTooltip={{trait.formula}} matTooltipPosition="right">{{trait.rating}}</mat-cell>
+          </ng-container>
+      
+          <!-- <mat-header-row *matHeaderRowDef="displayedColumns" [style.minHeight.px]="32"></mat-header-row> -->
+          <mat-row *matRowDef="let row; columns: traitColumns;" [style.minHeight.px]="32"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+    <div class="col-6" style="display: table; padding-bottom: 0px">
+      <div class="stat-table-container">
+        <h3 class="stat-table-title">Skills</h3>
+      
+        <mat-table #table [dataSource]="skillSource">
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef class="mat-skill-header">Skill</mat-header-cell>
+            <mat-cell *matCellDef="let skill" matTooltip={{skill.description}} matTooltipPosition="left">
+              {{skill.name}}
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Attribute Column -->
+          <ng-container matColumnDef="attribute">
+            <mat-header-cell *matHeaderCellDef>Attribute</mat-header-cell>
+            <mat-cell *matCellDef="let skill">
+              {{skill.attribute}}
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Rating Column -->
+          <ng-container matColumnDef="rating">
+            <mat-header-cell *matHeaderCellDef>Rating</mat-header-cell>
+            <mat-cell *matCellDef="let skill">
+              <a mat-icon-button color="accent" (click)="lowerSkill(skill.name)" class="lower-stat-button">
+                <mat-icon>remove_circle</mat-icon>
+              </a>
+                {{skill.rating}}
+              <a mat-icon-button color="primary" (click)="raiseSkill(skill.name)" class="raise-stat-button">
+                <mat-icon>add_circle</mat-icon>
+              </a>
+            </mat-cell>
+          </ng-container>
+      
+          <!-- Total Column -->
+          <ng-container matColumnDef="total">
+            <mat-header-cell *matHeaderCellDef>Total</mat-header-cell>
+            <mat-cell *matCellDef="let skill">{{skill.total}}</mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="skillColumns" [style.minHeight.px]="32"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: skillColumns;" [style.minHeight.px]="24"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+  </div>
+</mat-card>

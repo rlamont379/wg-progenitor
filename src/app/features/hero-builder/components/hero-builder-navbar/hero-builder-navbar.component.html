@@ -1,0 +1,24 @@
+
+<div *ngIf="hero" class="row">
+  <div class="hero-xp">
+    {{hero.species.cost + hero.archetype.cost}}/{{hero.tierXp + hero.earnedXp}} XP
+  </div>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/info" routerLinkActive="activebutton">
+    <mat-icon>description</mat-icon> Info
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/species" routerLinkActive="activebutton">
+    <mat-icon>accessibility</mat-icon> Species
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/faction" routerLinkActive="activebutton">
+    <mat-icon>groups</mat-icon> Faction
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/archetype" routerLinkActive="activebutton">
+    <mat-icon>military_tech</mat-icon> Archetype
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/builder/stats" routerLinkActive="activebutton">
+    <mat-icon>bar_chart</mat-icon> Stats
+  </a>
+  <a mat-raised-button color="primary" routerLink="/characters/{{hero.id}}/sheet" routerLinkActive="activebutton">
+    <mat-icon>web</mat-icon> Character Sheet
+  </a>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="hero">
+  <div class="character-sheet-container">
+    <div class="row">
+      <div class="col-4">
+        <app-hero-details-info-panel></app-hero-details-info-panel>
+      </div>
+      <div class="col-4">
+        <!--<app-hero-survival-panel></app-hero-survival-panel>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2" style="display: table">
+        <app-hero-details-attributes-panel></app-hero-details-attributes-panel>
+        <app-hero-details-traits-panel></app-hero-details-traits-panel>
+      </div>
+      <div class="col-3" style="display: table">
+        <app-hero-details-skills-panel></app-hero-details-skills-panel>
+      </div>
+    </div>
+  </div>
+</div>

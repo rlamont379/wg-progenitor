@@ -1,0 +1,64 @@
+<div class="col-2" style="display: table">
+  <table class="character-survival-table">
+    <tr>
+      <th colSpan=2>
+        Wounds
+      </th>
+    </tr>
+    <tr>
+      <td><input type="number" style="width: 50px"></td>
+      <td *ngIf="hero">{{hero.traitMaxWounds}}</td>
+    </tr>
+    <tr>
+      <th>Current</th>
+      <th>Max</th>
+    </tr>
+  </table>
+</div>
+<div class="col-2" style="display: table">
+  <table class="character-survival-table">
+    <tr>
+      <th colSpan=2>
+        Shock
+      </th>
+    </tr>
+    <tr>
+      <td><input type="number" style="width: 50px"></td>
+      <td *ngIf="hero">{{hero.traitMaxShock}}</td>
+    </tr>
+    <tr>
+      <th>Current</th>
+      <th>Max</th>
+    </tr>
+  </table>
+</div>
+<div class="col-1" style="display: table">
+  <table class="character-survival-table">
+    <tr>
+      <th>Defence</th>
+    </tr>
+    <tr>
+      <td *ngIf="hero">{{hero.traitDefence}}</td>
+    </tr>
+  </table>
+</div>
+<div class="col-1" style="display: table">
+  <table class="character-survival-table">
+    <tr>
+      <th>Resilience</th>
+    </tr>
+    <tr>
+      <td *ngIf="hero">{{hero.traitResilience}}</td>
+    </tr>
+  </table>
+</div>
+<div class="col-1" style="display: table">
+  <table class="character-survival-table">
+    <tr>
+      <th>Determination</th>
+    </tr>
+    <tr>
+      <td *ngIf="hero">{{hero.traitDetermination}}</td>
+    </tr>
+  </table>
+</div>

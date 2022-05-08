@@ -1,0 +1,76 @@
+<div class="stat-table-container">
+  <h3 class="stat-table-title">Attributes</h3>
+
+  <mat-table #table [dataSource]="attrSource">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Attribute</mat-header-cell>
+      <mat-cell *matCellDef="let attribute">{{attribute.name}}</mat-cell>
+    </ng-container>
+
+    <!-- Rating Column -->
+    <ng-container matColumnDef="rating">
+      <mat-header-cell *matHeaderCellDef>Rating</mat-header-cell>
+      <mat-cell *matCellDef="let attribute">{{attribute.rating}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns" [style.minHeight.px]="32"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" [style.minHeight.px]="28"></mat-row>
+  </mat-table>
+</div>
+
+
+<!--<table class="character-attributes-table">
+  <thead>
+    ATTRIBUTES
+  </thead>
+  <tr>
+    <th style="text-align: left">Attribute</th>
+    <th>Levels</th>
+    <th>Levels</th>
+    <th>Levels</th>
+  </tr>
+  <tr>
+    <th style="text-align: left">Strength</th>
+    <td *ngIf="hero">{{hero.strLevels}}</td>
+    <td *ngIf="hero">{{hero.strLevels}}</td>
+    <td *ngIf="hero">{{hero.strLevels}}</td>
+  </tr>
+  <tr>
+    <th style="text-align: left">Toughness</th>
+    <td *ngIf="hero">{{hero.toughLevels}}</td>
+    <td *ngIf="hero">{{hero.toughLevels}}</td>
+    <td *ngIf="hero">{{hero.toughLevels}}</td>
+  </tr>
+  <tr>
+    <th style="text-align: left">Agility</th>
+    <td *ngIf="hero">{{hero.agiLevels}}</td>
+    <td *ngIf="hero">{{hero.agiLevels}}</td>
+    <td *ngIf="hero">{{hero.agiLevels}}</td>
+  </tr>
+  <tr>
+    <th style="text-align: left">Initiative</th>
+    <td *ngIf="hero">{{hero.initLevels}}</td>
+    <td *ngIf="hero">{{hero.initLevels}}</td>
+    <td *ngIf="hero">{{hero.initLevels}}</td>
+  </tr>
+  <tr>
+    <th style="text-align: left">Willpower</th>
+    <td *ngIf="hero">{{hero.wilLevels}}</td>
+    <td *ngIf="hero">{{hero.wilLevels}}</td>
+    <td *ngIf="hero">{{hero.wilLevels}}</td>
+  </tr>
+  <tr>
+    <th style="text-align: left">Intellect</th>
+    <td *ngIf="hero">{{hero.intLevels}}</td>
+    <td *ngIf="hero">{{hero.intLevels}}</td>
+    <td *ngIf="hero">{{hero.intLevels}}</td>
+  </tr>
+  <tr>
+    <th style="text-align: left">Fellowship</th>
+    <td *ngIf="hero">{{hero.felLevels}}</td>
+    <td *ngIf="hero">{{hero.felLevels}}</td>
+    <td *ngIf="hero">{{hero.felLevels}}</td>
+  </tr>
+</table>-->

@@ -1,0 +1,17 @@
+mat-icon {
+  margin-left:0px;
+}
+
+.activebutton {
+  color: #dcd04c;
+  background-color: #303F9F;
+}
+
+a:hover {
+  background-color: #000000;
+}
+
+.hero-xp {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
