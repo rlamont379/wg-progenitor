@@ -5,7 +5,7 @@
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef class="mat-skill-header"> Skill </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef class="mat-skill-header"><p class="word-skill">Skill</p></mat-header-cell>
       <mat-cell *matCellDef="let skill">
         <a mat-icon-button (click)="testClick()">
           <mat-icon>casino</mat-icon>
@@ -16,26 +16,26 @@
 
     <!-- Attribute Column -->
     <ng-container matColumnDef="attribute">
-      <mat-header-cell *matHeaderCellDef> Attribute </mat-header-cell>
-      <mat-cell *matCellDef="let skill"> {{skill.attribute}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Attribute</mat-header-cell>
+      <mat-cell *matCellDef="let skill">{{skill.attribute}}</mat-cell>
     </ng-container>
 
-    <!-- Levels Column -->
+    <!-- Rating Column -->
     <ng-container matColumnDef="rating">
-      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
-      <mat-cell *matCellDef="let skill"> {{skill.rating}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Rating</mat-header-cell>
+      <mat-cell *matCellDef="let skill">{{skill.rating}} </mat-cell>
     </ng-container>
   
-    <!-- Levels Column -->
+    <!-- Bonus Column -->
     <ng-container matColumnDef="bonus">
-      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
-      <mat-cell *matCellDef="let skill"> {{skill.bonus}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Bonus</mat-header-cell>
+      <mat-cell *matCellDef="let skill">{{skill.bonus}}</mat-cell>
     </ng-container>
   
-    <!-- Levels Column -->
+    <!-- Total Column -->
     <ng-container matColumnDef="total">
-      <mat-header-cell *matHeaderCellDef> Levels </mat-header-cell>
-      <mat-cell *matCellDef="let skill"> {{skill.total}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef>Total</mat-header-cell>
+      <mat-cell *matCellDef="let skill">{{skill.total}}</mat-cell>
     </ng-container>
   
     <mat-header-row *matHeaderRowDef="displayedColumns" [style.minHeight.px]="32"></mat-header-row>

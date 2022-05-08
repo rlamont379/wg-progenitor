@@ -12,7 +12,7 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 })
 export class HeroDetailsAttributesPanelComponent implements OnInit {
   @Input() hero?: Hero;
-  displayedColumns = ['name', 'rating', 'bonus', 'total'];
+  displayedColumns = ['name', 'rating'];
   ATTR_DATA: Attribute[] = [];
   attrSource: any;
 
@@ -29,45 +29,31 @@ export class HeroDetailsAttributesPanelComponent implements OnInit {
     this.ATTR_DATA = [
       { 
         name: "Strength",
-        rating: this.hero?.strLevels as number,
-        bonus: this.hero?.strLevels as number,
-        total: this.hero?.strLevels as number,
+        rating: this.hero?.strRating as number,
       },
       { 
         name: "Toughness",
-        rating: this.hero?.toughLevels as number,
-        bonus: this.hero?.toughLevels as number,
-        total: this.hero?.toughLevels as number,
+        rating: this.hero?.toughRating as number,
       },
       { 
         name: "Agility",
-        rating: this.hero?.agiLevels as number,
-        bonus: this.hero?.agiLevels as number,
-        total: this.hero?.agiLevels as number,
+        rating: this.hero?.agiRating as number,
       },
       { 
         name: "Initiative",
-        rating: this.hero?.initLevels as number,
-        bonus: this.hero?.initLevels as number,
-        total: this.hero?.initLevels as number,
+        rating: this.hero?.initRating as number,
       },
       { 
         name: "Willpower",
-        rating: this.hero?.wilLevels as number,
-        bonus: this.hero?.wilLevels as number,
-        total: this.hero?.wilLevels as number,
+        rating: this.hero?.wilRating as number,
       },
       { 
         name: "Intellect",
-        rating: this.hero?.intLevels as number,
-        bonus: this.hero?.intLevels as number,
-        total: this.hero?.intLevels as number,
+        rating: this.hero?.intRating as number,
       },
       { 
         name: "Fellowship",
-        rating: this.hero?.felLevels as number,
-        bonus: this.hero?.felLevels as number,
-        total: this.hero?.felLevels as number,
+        rating: this.hero?.felRating as number,
       },
     ]
     this.attrSource = new MatTableDataSource(this.ATTR_DATA)
@@ -83,6 +69,4 @@ export class HeroDetailsAttributesPanelComponent implements OnInit {
 export interface Attribute {
   name: string;
   rating: number;
-  bonus: number;
-  total: number,
 }

@@ -32,3 +32,11 @@
 .raise-stat-button:hover {
   color: #000000;
 }
+
+.save-button {
+  float: right;
+}
+
+.save-button:hover {
+  background-color: #000000;
+}

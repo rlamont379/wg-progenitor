@@ -14,8 +14,14 @@
 
 
 .mat-skill-header {
-  padding-left: 40px;
   justify-content: left;
+}
+
+.word-skill {
+  margin-left: 16px;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0px;
 }
 
 .mat-column-attribute {
@@ -23,17 +29,17 @@
 }
 
 .mat-column-rating {
-  max-width: 10%;
+  max-width: 48px;
   justify-content: center;
 }
 
 .mat-column-bonus {
-  max-width: 10%;
+  max-width: 48px;
   justify-content: center;
 }
 
 .mat-column-total {
-  max-width: 10%;
+  max-width: 48px;
   justify-content: center;
 }
 

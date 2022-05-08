@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from 'src/app/shared/models/hero';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService } from 'src/app/shared/services/hero.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -89,6 +90,7 @@ export class HeroBuilderStatsComponent implements OnInit {
     private route: ActivatedRoute,
     private heroService: HeroService,
     private snackBar: MatSnackBar,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -114,49 +116,49 @@ export class HeroBuilderStatsComponent implements OnInit {
       this.attr[element.name] = element.value;
       this.baseAttr[element.name] = element.value;
     });
-    this.attr["Strength"] = (this.hero?.strLevels ? this.hero?.strLevels : 0);
+    this.attr["Strength"] = (this.hero?.strRating ? this.hero?.strRating : 0);
     if(this.attr["Strength"] < this.baseAttr["Strength"]) {
       this.attr["Strength"] = this.baseAttr["Strength"];
     }
     if(this.attr["Strength"] < 1) {
       this.attr["Strength"] = 1;
     }
-    this.attr["Toughness"] = (this.hero?.toughLevels ? this.hero?.toughLevels : 0);
+    this.attr["Toughness"] = (this.hero?.toughRating ? this.hero?.toughRating : 0);
     if(this.attr["Toughness"] < this.baseAttr["Toughness"]) {
       this.attr["Toughness"] = this.baseAttr["Toughness"];
     }
     if(this.attr["Toughness"] < 1) {
       this.attr["Toughness"] = 1;
     }
-    this.attr["Agility"] = (this.hero?.agiLevels ? this.hero?.agiLevels : 0);
+    this.attr["Agility"] = (this.hero?.agiRating ? this.hero?.agiRating : 0);
     if(this.attr["Agility"] < this.baseAttr["Agility"]) {
       this.attr["Agility"] = this.baseAttr["Agility"];
     }
     if(this.attr["Agility"] < 1) {
       this.attr["Agility"] = 1;
     }
-    this.attr["Initiative"] = (this.hero?.initLevels ? this.hero?.initLevels : 0);
+    this.attr["Initiative"] = (this.hero?.initRating ? this.hero?.initRating : 0);
     if(this.attr["Initiative"] < this.baseAttr["Initiative"]) {
       this.attr["Initiative"] = this.baseAttr["Initiative"];
     }
     if(this.attr["Initiative"] < 1) {
       this.attr["Initiative"] = 1;
     }
-    this.attr["Willpower"] = (this.hero?.wilLevels ? this.hero?.wilLevels : 0);
+    this.attr["Willpower"] = (this.hero?.wilRating ? this.hero?.wilRating : 0);
     if(this.attr["Willpower"] < this.baseAttr["Willpower"]) {
       this.attr["Willpower"] = this.baseAttr["Willpower"];
     }
     if(this.attr["Willpower"] < 1) {
       this.attr["Willpower"] = 1;
     }
-    this.attr["Intellect"] = (this.hero?.intLevels ? this.hero?.intLevels : 0);
+    this.attr["Intellect"] = (this.hero?.intRating ? this.hero?.intRating : 0);
     if(this.attr["Intellect"] < this.baseAttr["Intellect"]) {
       this.attr["Intellect"] = this.baseAttr["Intellect"];
     }
     if(this.attr["Intellect"] < 1) {
       this.attr["Intellect"] = 1;
     }
-    this.attr["Fellowship"] = (this.hero?.felLevels ? this.hero?.felLevels : 0);
+    this.attr["Fellowship"] = (this.hero?.felRating ? this.hero?.felRating : 0);
     if(this.attr["Fellowship"] < this.baseAttr["Fellowship"]) {
       this.attr["Fellowship"] = this.baseAttr["Fellowship"];
     }
@@ -304,30 +306,37 @@ export class HeroBuilderStatsComponent implements OnInit {
     this.ATTR_DATA = [
       { 
         name: "Strength",
+        description: "Your raw phyiscal power.",
         rating: this.attr["Strength"] as number,
       },
       { 
         name: "Toughness",
+        description: "Your endurance and ability to resist toxin and disease.",
         rating: this.attr["Toughness"] as number,
       },
       { 
         name: "Agility",
+        description: "Your dexterity and coordination.",
         rating: this.attr["Agility"] as number,
       },
       { 
         name: "Initiative",
+        description: "Your reflexes and reaction speed.",
         rating: this.attr["Initiative"] as number,
       },
       { 
         name: "Willpower",
+        description: "Your self-control and mental fortitude.",
         rating: this.attr["Willpower"] as number,
       },
       { 
         name: "Intellect",
+        description: "Your ability to process, retain, and apply information.",
         rating: this.attr["Intellect"] as number,
       },
       { 
         name: "Fellowship",
+        description: "The power of your personality.",
         rating: this.attr["Fellowship"] as number,
       },
     ]
@@ -339,108 +348,126 @@ export class HeroBuilderStatsComponent implements OnInit {
     this.SKILL_DATA = [
       {
         name: "Athletics",
+        description: "Your ability to run, jump, and swim, dependent on your physical strength.",
         attribute: "Strength",
         rating: this.skills["Athletics"] as number,
         total: (this.skills["Athletics"] + this.attr["Strength"]) as number,
       },
       { 
         name: "Awareness",
+        description: "Your ability to observe details and changes, including perceiving things that are hidden.",
         attribute: "Intellect",
         rating: this.skills["Awareness"] as number,
         total: (this.skills["Awareness"] + this.attr["Intellect"]) as number,
       },
       { 
         name: "Ballistic Skill",
+        description: "Your skill with firearms and other ranged weapons.",
         attribute: "Agility",
         rating: this.skills["Ballistic Skill"] as number,
         total: (this.skills["Ballistic Skill"] + this.attr["Agility"]) as number,
       },
       { 
         name: "Cunning",
+        description: "Your ability to think and act like those who operate outside the law.",
         attribute: "Fellowship",
         rating: this.skills["Cunning"] as number,
         total: (this.skills["Cunning"] + this.attr["Fellowship"]) as number,
       },
       { 
         name: "Deception",
+        description: "Your ability to lie convincingly.",
         attribute: "Fellowship",
         rating: this.skills["Deception"] as number,
         total: (this.skills["Deception"] + this.attr["Fellowship"]) as number,
       },
       { 
         name: "Insight",
+        description: "Your ability to pick up on social cues from others to discern their motivations.",
         attribute: "Fellowship",
         rating: this.skills["Insight"] as number,
         total: (this.skills["Insight"] + this.attr["Fellowship"]) as number,
       },
       { 
         name: "Intimidation",
+        description: "Your ability to frighten people into doing what you want by either bullying, coercion, or threats.",
         attribute: "Willpower",
         rating: this.skills["Intimidation"] as number,
         total: (this.skills["Intimidation"] + this.attr["Willpower"]) as number,
       },
       { 
         name: "Investigation",
+        description: "Your ability to decipher clues, perform research, and assemble information through proper channels.",
         attribute: "Intellect",
         rating: this.skills["Investigation"] as number,
         total: (this.skills["Investigation"] + this.attr["Intellect"]) as number,
       },
       { 
         name: "Leadership",
+        description: "Your ability to inspire others to do dangerous things, inspire respect, and push others beyond their limits.",
         attribute: "Willpower",
         rating: this.skills["Leadership"] as number,
         total: (this.skills["Leadership"] + this.attr["Willpower"]) as number,
       },
       { 
         name: "Medicae",
+        description: "Your ability to diagnose and heal by identifying diseases and toxins and counteracting their effects, as well as to remedy other ailments through first aid or surgery. ",
         attribute: "Intellect",
         rating: this.skills["Medicae"] as number,
         total: (this.skills["Medicae"] + this.attr["Intellect"]) as number,
       },
       { 
         name: "Persuasion",
+        description: "Your ability to convince others and change their opinion through logic, impassioned pleas, or bargaining.",
         attribute: "Fellowship",
         rating: this.skills["Persuasion"] as number,
         total: (this.skills["Persuasion"] + this.attr["Fellowship"]) as number,
       },
       { 
         name: "Pilot",
+        description: "Your ability to control a vehicle.",
         attribute: "Agility",
         rating: this.skills["Pilot"] as number,
         total: (this.skills["Pilot"] + this.attr["Agility"]) as number,
       },
       { 
         name: "Psychic Mastery",
+        description: "Your ability to manifest psychic powers, manipulating the Warp to change reality.",
         attribute: "Willpower",
         rating: this.skills["Psychic Mastery"] as number,
         total: (this.skills["Psychic Mastery"] + this.attr["Willpower"]) as number,
       },
       { 
         name: "Scholar",
+        description: "Your ability to recall knowledge from your studies.",
         attribute: "Intellect",
         rating: this.skills["Scholar"] as number,
         total: (this.skills["Scholar"] + this.attr["Intellect"]) as number,
       },
       { 
         name: "Stealth",
+        description: "Your ability to hide, move without being detected, and disable security systems.",
         attribute: "Agility",
         rating: this.skills["Stealth"] as number,
         total: (this.skills["Stealth"] + this.attr["Agility"]) as number,
       },
       { 
         name: "Survival",
+        description: "Your ability to find provisions, secure shelter, and to track or navigate through an organic environment.",
         attribute: "Willpower",
         rating: this.skills["Survival"] as number,
         total: (this.skills["Survival"] + this.attr["Willpower"]) as number,
       },
       { 
         name: "Tech",
+        description: "Your ability to understand, use, repair, and dismantle technology.",
         attribute: "Intellect",
         rating: this.skills["Tech"] as number,
         total: (this.skills["Tech"] + this.attr["Intellect"]) as number,
       },
       { 
         name: "Weapon Skill",
+        description: "Your skill at close combat, armed or unarmed.",
         attribute: "Initiative",
         rating: this.skills["Weapon Skill"] as number,
         total: (this.skills["Weapon Skill"] + this.attr["Initiative"]) as number,
@@ -452,7 +479,7 @@ export class HeroBuilderStatsComponent implements OnInit {
 
   updateTraits() {
     if(this.hero) {
-      this.hero.traitMaxWounds = this.attr["Toughness"] + this.hero?.tier;
+      this.hero.traitMaxWounds = this.attr["Toughness"] + (this.hero?.tier * 2);
       this.hero.traitMaxShock = this.attr["Willpower"] + this.hero?.tier;
       this.hero.traitDefence = this.attr["Initiative"] - 1;
       this.hero.traitResilience = this.attr["Toughness"] + 1;
@@ -463,11 +490,12 @@ export class HeroBuilderStatsComponent implements OnInit {
       this.hero.traitResolve = this.attr["Willpower"] - 1;
       this.hero.traitAwareness = Math.ceil((this.skills["Awareness"] + this.attr["Initiative"]) / 2);
       this.hero.traitInfluence = this.attr["Fellowship"] - 1 + (this.hero.archetype.bonuses?.influence ? this.hero.archetype.bonuses?.influence : 0);
+      console.log(this.hero.traitInfluence);
       this.hero.traitWealth = this.hero.tier;
       if(this.hero.traitResolve < 1) {
         this.hero.traitResolve = 1;
       }
-      if(this.hero.species.name = "Ork") {
+      if(this.hero.species.name == "Ork") {
         this.hero.traitInfluence = this.attr["Strength"] - 1 + (this.hero.archetype.bonuses?.influence ? this.hero.archetype.bonuses?.influence : 0);
       }
     }
@@ -475,41 +503,69 @@ export class HeroBuilderStatsComponent implements OnInit {
     this.TRAIT_DATA = [
       {
         name: "Max Wounds",
+        description: "A measure of how many injuries you can suffer before you potentially die.",
         rating: this.hero?.traitMaxWounds as number,
+        formula: "= Toughness + (Tier * 2)",
       },
       {
         name: "Max Shock",
+        description: "A measure of how much mental trauma you can take before your will breaks.",
         rating: this.hero?.traitMaxShock as number,
+        formula: "= Willpower + Tier",
       },
       {
         name: "Defence",
+        description: "Your ability to dodge blows and bullets; essentially how hard you are to hit.",
         rating: this.hero?.traitDefence as number,
+        formula: "= Initiative - 1",
       },
       {
         name: "Resilience",
+        description: "A representation of how well you can withstand injuries.",
         rating: this.hero?.traitResilience as number,
+        formula: "= Toughness + 1",
       },
       {
         name: "Determination",
+        description: "Your ability to continue acting despite the damage to your body, ignoring physical harm through force of will.",
         rating: this.hero?.traitDetermination as number,
+        formula: "= Toughness",
       },
-      { name: "Speed",
+      {
+        name: "Speed",
+        description: "How far and how quickly you can move in a given amount of time.",
         rating: this.hero?.traitSpeed as number,
+        formula: "= Species Speed",
       },
-      { name: "Conviction",
+      {
+        name: "Conviction",
+        description: "Your ability to withstand corruption and the forces of Chaos.",
         rating: this.hero?.traitConviction as number,
+        formula: "= Willpower",
       },
-      { name: "Resolve",
+      {
+        name: "Resolve",
+        description: "Your courage and overall morale.",
         rating: this.hero?.traitResolve as number,
+        formula: "= Willpower - 1",
       },
-      { name: "Passive Awareness",
+      {
+        name: "Passive Awareness",
+        description: "Your ability to notice the unusual and sense threats when you aren't actively searching your environment.",
         rating: this.hero?.traitAwareness as number,
+        formula: "= Awareness / 2",
       },
-      { name: "Influence",
-      rating: this.hero?.traitInfluence as number,
+      {
+        name: "Influence",
+        description: "A measure of your societal authoriy and reputation.",
+        rating: this.hero?.traitInfluence as number,
+        formula: "= Fellowship + Archetype Bonus",
       },
-      { name: "Wealth",
-      rating: this.hero?.traitWealth as number,
+      {
+        name: "Wealth",
+        description: "A measure of the valuable resources you own.",
+        rating: this.hero?.traitWealth as number,
+        formula: "= Tier",
       },
     ]
     this.traitSource = new MatTableDataSource(this.TRAIT_DATA)
@@ -568,7 +624,6 @@ export class HeroBuilderStatsComponent implements OnInit {
       this.openCustomXpSpentSnackBar();
     }
     this.updateSkills();
-
   }
 
   lowerSkill(stat: string): void {
@@ -578,7 +633,58 @@ export class HeroBuilderStatsComponent implements OnInit {
       this.openCustomXpSpentSnackBar();
     }
     this.updateSkills();
+  }
 
+  saveHeroStats(): void {
+    if(this.hero) {
+      this.hero.strRating = this.attr["Strength"];
+      this.hero.toughRating = this.attr["Toughness"];
+      this.hero.agiRating = this.attr["Agility"];
+      this.hero.initRating = this.attr["Initiative"];
+      this.hero.wilRating = this.attr["Willpower"];
+      this.hero.intRating = this.attr["Intellect"];
+      this.hero.felRating = this.attr["Fellowship"];
+      this.hero.athleticsLevels = this.skills["Athletics"];
+      this.hero.athleticsTotal = this.skills["Athletics"] + this.hero.strRating;
+      this.hero.awarenessLevels = this.skills["Awareness"];
+      this.hero.awarenessTotal = this.skills["Awareness"] + this.hero.intRating;
+      this.hero.ballisticsLevels = this.skills["Ballistic Skill"];
+      this.hero.ballisticsTotal = this.skills["Ballistic Skill"] + this.hero.agiRating;
+      this.hero.cunningLevels = this.skills["Cunning"];
+      this.hero.cunningTotal = this.skills["Cunning"] + this.hero.felRating;
+      this.hero.deceptionLevels = this.skills["Deception"];
+      this.hero.deceptionTotal = this.skills["Deception"] + this.hero.felRating;
+      this.hero.insightLevels = this.skills["Insight"];
+      this.hero.insightTotal = this.skills["Insight"] + this.hero.felRating;
+      this.hero.intimidationLevels = this.skills["Intimidation"];
+      this.hero.intimidationTotal = this.skills["Intimidation"] + this.hero.wilRating;
+      this.hero.investigationLevels = this.skills["Investigation"];
+      this.hero.investigationTotal = this.skills["Investigation"] + this.hero.intRating;
+      this.hero.leadershipLevels = this.skills["Leadership"];
+      this.hero.leadershipTotal = this.skills["Leadership"] + this.hero.wilRating;
+      this.hero.medicaeLevels = this.skills["Medicae"];
+      this.hero.medicaeTotal = this.skills["Medicae"] + this.hero.intRating;
+      this.hero.persuasionLevels = this.skills["Persuasion"];
+      this.hero.persuasionTotal = this.skills["Persuasion"] + this.hero.felRating;
+      this.hero.pilotLevels = this.skills["Pilot"];
+      this.hero.pilotTotal = this.skills["Pilot"] + this.hero.agiRating;
+      this.hero.psychicLevels = this.skills["Psychic Mastery"];
+      this.hero.psychicTotal = this.skills["Psychic Mastery"] + this.hero.wilRating;
+      this.hero.scholarLevels = this.skills["Scholar"];
+      this.hero.scholarTotal = this.skills["Scholar"] + this.hero.intRating;
+      this.hero.stealthLevels = this.skills["Stealth"];
+      this.hero.stealthTotal = this.skills["Stealth"] + this.hero.agiRating;
+      this.hero.survivalLevels = this.skills["Survival"];
+      this.hero.survivalTotal = this.skills["Survival"] + this.hero.wilRating;
+      this.hero.techLevels = this.skills["Tech"];
+      this.hero.techTotal = this.skills["Tech"] + this.hero.intRating;
+      this.hero.weaponsLevels = this.skills["Weapon Skill"];
+      this.hero.weaponsTotal = this.skills["Weapon Skill"] + this.hero.initRating;
+      this.heroService.updateHero(this.hero)
+        .subscribe(hero => this.hero = hero);
+      this.router.navigate(['../../sheet'], { relativeTo: this.route });
+      //this.openCustomSaveSnackBar();
+    }
   }
 
   openCustomXpSpentSnackBar(): void {
@@ -599,24 +705,39 @@ export class HeroBuilderStatsComponent implements OnInit {
                 : this.xpSpent < 0
                 ? "arrow_circle_down"
                 : ""),
-      }
+      },
+      horizontalPosition: 'right'
+    })
+  }
+
+  openCustomSaveSnackBar(): void {
+    this.snackBar.openFromComponent(IconSnackBarComponent, {
+      data: {
+        message: "Saved Stats",
+        icon: "published_with_changes",
+      },
+      duration: 2000
     })
   }
 }
 
 export interface Attribute {
-  name: string;
-  rating: number;
+  name: string,
+  description: string,
+  rating: number,
 }
 
 export interface Skill {
-  name: string;
-  attribute: string;
-  rating: number;
+  name: string,
+  description: string,
+  attribute: string,
+  rating: number,
   total: number,
 }
 
 export interface Trait {
-  name: string;
-  rating: number;
+  name: string,
+  description: string,
+  rating: number,
+  formula: string,
 }

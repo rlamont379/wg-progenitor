@@ -19,19 +19,19 @@ export interface Hero {
   languages?: string[];
   objectives?: string[];
 
-  strLevels: number;
+  strRating: number;
   strTotal: number;
-  toughLevels: number;
+  toughRating: number;
   toughTotal: number;
-  agiLevels: number;
+  agiRating: number;
   agiTotal: number;
-  initLevels: number;
+  initRating: number;
   initTotal: number;
-  wilLevels: number;
+  wilRating: number;
   wilTotal: number;
-  intLevels: number;
+  intRating: number;
   intTotal: number;
-  felLevels: number;
+  felRating: number;
   felTotal: number;
 
   traitDefence: number;
