@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 import { HeroService } from 'src/app/shared/services/hero.service';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
+import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar/icon-snack-bar.component';
 
 @Component({
   selector: 'app-hero-builder-stats',

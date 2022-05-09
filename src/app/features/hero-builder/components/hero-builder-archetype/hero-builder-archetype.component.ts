@@ -7,7 +7,7 @@ import { HeroService } from 'src/app/shared/services/hero.service';
 import { Archetype } from 'src/app/shared/models/archetype';
 import { ArchetypeService } from 'src/app/shared/services/archetype.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
+import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar/icon-snack-bar.component';
 
 
 @Component({

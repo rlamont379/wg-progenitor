@@ -7,7 +7,7 @@ import { HeroService } from 'src/app/shared/services/hero.service';
 import { Species } from 'src/app/shared/models/species';
 import { SpeciesService } from 'src/app/shared/services/species.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
+import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar/icon-snack-bar.component';
 
 @Component({
   selector: 'app-hero-builder-species',

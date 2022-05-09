@@ -16,6 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from 'src/environments/environment';
 
 import { AppComponent } from 'src/app/app.component';
 import { HeroesComponent } from 'src/app/heroes/heroes.component';
@@ -36,7 +38,12 @@ import { HeroBuilderSpeciesComponent } from 'src/app/features/hero-builder/compo
 import { HeroBuilderArchetypeComponent } from 'src/app/features/hero-builder/components/hero-builder-archetype/hero-builder-archetype.component';
 import { HeroBuilderStatsComponent } from 'src/app/features/hero-builder/components/hero-builder-stats/hero-builder-stats.component';
 import { HeroBuilderFactionComponent } from 'src/app/features/hero-builder/components/hero-builder-faction/hero-builder-faction.component';
-import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
+import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar/icon-snack-bar.component';
+import { LoginButtonComponent } from './shared/components/login-button/login-button.component';
+import { SignupButtonComponent } from './shared/components/signup-button/signup-button.component';
+import { LogoutButtonComponent } from './shared/components/logout-button/logout-button.component';
+import { AuthenticationButtonComponent } from './shared/components/authentication-button/authentication-button.component';
+import { AuthenticationNavComponent } from './shared/components/authentication-nav/authentication-nav.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +65,11 @@ import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.
     HeroBuilderStatsComponent,
     HeroBuilderFactionComponent,
     IconSnackBarComponent,
+    LoginButtonComponent,
+    SignupButtonComponent,
+    LogoutButtonComponent,
+    AuthenticationButtonComponent,
+    AuthenticationNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +92,10 @@ import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.
     MatSnackBarModule,
     MatDividerModule,
     MatTooltipModule,
+    AuthModule.forRoot({
+      ...env.auth.domain,
+      ...env.auth.clientId,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

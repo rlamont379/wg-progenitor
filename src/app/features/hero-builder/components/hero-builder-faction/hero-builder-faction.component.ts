@@ -8,7 +8,7 @@ import { Species } from 'src/app/shared/models/species';
 import { Faction } from 'src/app/shared/models/faction';
 import { FactionService } from 'src/app/shared/services/faction.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar.component';
+import { IconSnackBarComponent } from 'src/app/shared/components/icon-snack-bar/icon-snack-bar.component';
 
 @Component({
   selector: 'app-hero-builder-faction',

@@ -2,8 +2,16 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import * as domain from '../../auth_config.json';
+import * as clientId from '../../auth_config.json'
+
 export const environment = {
-  production: false
+  production: false,
+  auth: {
+    domain,
+    clientId,
+    redirectUri: window.location.origin
+  },
 };
 
 /*
