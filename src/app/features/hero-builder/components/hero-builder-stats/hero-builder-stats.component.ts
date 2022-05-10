@@ -490,7 +490,6 @@ export class HeroBuilderStatsComponent implements OnInit {
       this.hero.traitResolve = this.attr["Willpower"] - 1;
       this.hero.traitAwareness = Math.ceil((this.skills["Awareness"] + this.attr["Initiative"]) / 2);
       this.hero.traitInfluence = this.attr["Fellowship"] - 1 + (this.hero.archetype.bonuses?.influence ? this.hero.archetype.bonuses?.influence : 0);
-      console.log(this.hero.traitInfluence);
       this.hero.traitWealth = this.hero.tier;
       if(this.hero.traitResolve < 1) {
         this.hero.traitResolve = 1;

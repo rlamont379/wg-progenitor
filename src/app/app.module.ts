@@ -44,6 +44,7 @@ import { SignupButtonComponent } from './shared/components/signup-button/signup-
 import { LogoutButtonComponent } from './shared/components/logout-button/logout-button.component';
 import { AuthenticationButtonComponent } from './shared/components/authentication-button/authentication-button.component';
 import { AuthenticationNavComponent } from './shared/components/authentication-nav/authentication-nav.component';
+import { RollsSnackBarComponent } from './shared/components/rolls-snack-bar/rolls-snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { AuthenticationNavComponent } from './shared/components/authentication-n
     LogoutButtonComponent,
     AuthenticationButtonComponent,
     AuthenticationNavComponent,
+    RollsSnackBarComponent,
   ],
   imports: [
     BrowserModule,
