@@ -10,7 +10,7 @@ export const environment = {
   auth: {
     domain,
     clientId,
-    redirectUri: "https://rlamont379.github.io"
+    redirectUri: window.location.origin
   },
 };
 
